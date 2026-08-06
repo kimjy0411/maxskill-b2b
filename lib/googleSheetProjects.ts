@@ -8,6 +8,7 @@ const HEADER_ALIASES: Record<string, keyof RowFields> = {
   client: "client",
   원도급사: "client",
   category: "category",
+  분야: "category",
   "화공/발전/lng": "category",
   "화공/발전/LNG": "category",
   year: "year",
@@ -93,11 +94,19 @@ function isHeaderRow(cells: string[]): boolean {
   );
 }
 
-function mapRow(cells: string[], columnMap: (keyof RowFields)[]): Project | null {
+function mapRow(
+  cells: string[],
+  columnMap: (keyof RowFields | null)[],
+): Project | null {
   const fields: Partial<RowFields> = {};
 
   columnMap.forEach((key, index) => {
-    fields[key] = cells[index]?.trim() ?? "";
+    if (!key) return;
+
+    const value = cells[index]?.trim() ?? "";
+    if (!value && fields[key]) return;
+
+    fields[key] = value;
   });
 
   const name = fields.name?.trim();
@@ -120,10 +129,10 @@ function mapRow(cells: string[], columnMap: (keyof RowFields)[]): Project | null
   };
 }
 
-function buildColumnMap(headerRow: string[]): (keyof RowFields)[] {
+function buildColumnMap(headerRow: string[]): (keyof RowFields | null)[] {
   return headerRow.map((cell) => {
     const key = HEADER_ALIASES[cell.trim().toLowerCase()];
-    return key ?? "name";
+    return key ?? null;
   });
 }
 
@@ -145,7 +154,7 @@ export async function fetchProjectsFromGoogleSheet(
 
   const hasHeader = isHeaderRow(rows[0]);
   const dataRows = hasHeader ? rows.slice(1) : rows;
-  const columnMap: (keyof RowFields)[] = hasHeader
+  const columnMap: (keyof RowFields | null)[] = hasHeader
     ? buildColumnMap(rows[0])
     : ["name", "client", "category", "year", "location", "service", "tool"];
 
