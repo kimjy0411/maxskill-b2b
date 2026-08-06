@@ -20,8 +20,9 @@ export interface Service {
   imageAlt: string;
 }
 
-function serviceBanner(photoId: string) {
-  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=1600&q=80`;
+/** public/images/services/ — GitHub에서 같은 이름으로 교체 가능 */
+function serviceBanner(filename: string) {
+  return `/images/services/${filename}`;
 }
 
 export const services: Service[] = [
@@ -99,8 +100,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: serviceBanner("photo-1670689334896-8fa8291daa27"),
-    imageAlt: "화학 플랜트 배관·설비 전경 (Unsplash)",
+    image: serviceBanner("piping.jpg"),
+    imageAlt: "화학 플랜트 배관·설비 전경",
   },
   {
     id: "stress",
@@ -176,8 +177,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: serviceBanner("photo-1596980786765-775174984ec9"),
-    imageAlt: "정유·화학 플랜트 설비 (Unsplash)",
+    image: serviceBanner("stress.jpg"),
+    imageAlt: "정유·화학 플랜트 설비",
   },
   {
     id: "cad",
@@ -302,7 +303,7 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: serviceBanner("photo-1581092918056-0c4c3acd3789"),
+    image: serviceBanner("cad.jpg"),
     imageAlt: "엔지니어들이 컴퓨터에서 설계 도면을 검토하는 모습",
   },
   {
@@ -379,8 +380,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: serviceBanner("photo-1555066931-4365d14bab8c"),
-    imageAlt: "설계 자동화 Programming (Unsplash)",
+    image: serviceBanner("programming.jpg"),
+    imageAlt: "설계 자동화 Programming",
   },
 ];
 
