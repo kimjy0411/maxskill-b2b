@@ -12,6 +12,8 @@ const config: Config = {
         brand: {
           blue: "#0085FF",
           "blue-dark": "#0066CC",
+          "blue-light": "#D6EBFF",
+          "blue-light-hover": "#B8DCFF",
           tan: "#FFFFFF",
           "tan-light": "#E8EEF4",
           dark: "#0F0F0F",

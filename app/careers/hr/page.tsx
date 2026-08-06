@@ -1,9 +1,5 @@
 import CareersBanner from "@/components/CareersBanner";
-import {
-  employeeBenefits,
-  salaryComponents,
-  salarySystemIntro,
-} from "@/data/careers";
+import { employeeBenefits, salarySystemIntro, salaryTable } from "@/data/careers";
 
 export default function CareersHrPage() {
   return (
@@ -39,35 +35,56 @@ export default function CareersHrPage() {
                       구분
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-extrabold text-brand-blue sm:text-base">
+                      항목
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-extrabold text-brand-blue sm:text-base">
                       내용
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {salaryComponents.map((row, index) => (
-                    <tr
-                      key={row.category}
-                      className={`border-b border-white/5 ${
-                        index % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"
-                      }`}
-                    >
-                      <td className="px-6 py-5 align-top text-sm font-semibold text-white sm:text-base">
-                        {row.category}
-                      </td>
-                      <td className="px-6 py-5">
-                        <ul className="space-y-2">
-                          {row.items.map((item) => (
-                            <li
-                              key={item}
-                              className="text-sm leading-relaxed text-gray-300 sm:text-base"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                    </tr>
-                  ))}
+                  {salaryTable.map((group) =>
+                    group.rows.map((row, rowIndex) => (
+                      <tr
+                        key={`${group.category}-${row.label}`}
+                        className={`border-b border-white/5 ${
+                          rowIndex % 2 === 0
+                            ? "bg-transparent"
+                            : "bg-white/[0.02]"
+                        }`}
+                      >
+                        {rowIndex === 0 && (
+                          <td
+                            rowSpan={group.rows.length}
+                            className="border-r border-white/5 px-6 py-5 align-top text-sm font-semibold text-white sm:text-base"
+                          >
+                            {group.category}
+                          </td>
+                        )}
+                        <td className="border-r border-white/5 px-6 py-5 align-top text-sm font-medium text-gray-200 sm:text-base">
+                          {row.label}
+                        </td>
+                        <td className="px-6 py-5 align-top">
+                          {row.items.length > 0 ? (
+                            <ul className="space-y-2">
+                              {row.items.map((item) => (
+                                <li
+                                  key={item}
+                                  className="text-sm leading-relaxed text-gray-300 sm:text-base"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <span className="text-sm text-gray-500 sm:text-base">
+                              —
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    )),
+                  )}
                 </tbody>
               </table>
             </div>

@@ -63,7 +63,7 @@ export default async function HomePage() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex rounded-full bg-brand-tan px-8 py-3.5 text-sm font-bold text-brand-blue transition-colors hover:bg-brand-tan-light"
+            className="mt-8 inline-flex rounded-full bg-brand-blue-dark px-8 py-3.5 text-sm font-bold text-white shadow-md transition-colors hover:brightness-110"
           >
             회사 소개 보기
           </Link>

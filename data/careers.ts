@@ -7,21 +7,53 @@ export const careersNav = [
 ] as const;
 
 export const salarySystemIntro =
-  "맥스킬은 모든 직원의 연봉제를 시행하고 있습니다.";
+  "당사는 전직원에게 연봉제를 실시하고 있습니다.";
 
-export const salaryComponents = [
+export interface SalaryTableRow {
+  label: string;
+  items: string[];
+}
+
+export interface SalaryTableGroup {
+  category: string;
+  rows: SalaryTableRow[];
+}
+
+export const salaryTable: SalaryTableGroup[] = [
   {
-    category: "기본급",
-    items: ["연봉의 90%를 기본급으로 지급"],
+    category: "연봉",
+    rows: [
+      {
+        label: "월급여",
+        items: [
+          "기본급 (직급별 표준 금액)",
+          "능력급 (기준능력급 + 개인별 능력 가감급)",
+          "조정급 (직급별 표준 금액)",
+        ],
+      },
+      {
+        label: "설날/추석 상여 (200%)",
+        items: [],
+      },
+    ],
   },
   {
-    category: "상여금",
-    items: [
-      "명절 상여금 (200%)",
-      "생산성향상장려금",
-      "경영성과급 (Profit Sharing)",
-      "생산성 장려금 (Productivity Incentive)",
-      "특별상여금 (Special Bonus)",
+    category: "성과급",
+    rows: [
+      {
+        label: "집단 성과급 (P.I + P.S)",
+        items: [],
+      },
+      {
+        label: "생산성 격려금",
+        items: ["경영목표 달성도에 따라 반기별로 지급"],
+      },
+      {
+        label: "이익 배분 제도",
+        items: [
+          "경영 성과를 EVA라는 지표를 통해 평가하여 지급 (지급시기 : 년1회)",
+        ],
+      },
     ],
   },
 ];
