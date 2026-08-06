@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ProjectsPageContent from "@/components/ProjectsPageContent";
 import { getProjectsPageData } from "@/lib/projects";
 
@@ -63,24 +62,6 @@ export default async function ProjectsPage() {
         <p className="mt-8 text-sm text-gray-500">
           M : Modeling · D : Design · S : Stress · C : Construction Supervisor
         </p>
-      </section>
-
-      <section className="bg-brand-dark">
-        <div className="section-container py-20 text-center sm:py-28">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            프로젝트 문의가 필요하신가요?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-gray-400">
-            (주)맥스킬의 전문 엔지니어가 귀사의 프로젝트에 최적의 솔루션을
-            제안해 드립니다.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex rounded-full bg-brand-tan px-8 py-3.5 text-sm font-bold text-brand-blue transition-colors hover:bg-brand-tan-light"
-          >
-            무료 상담 신청하기
-          </Link>
-        </div>
       </section>
     </main>
   );
