@@ -4,9 +4,12 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectTable from "@/components/ProjectTable";
 import { companyInfo, capabilities, services, getServiceCardItems } from "@/data/company";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/projects";
 
-export default function HomePage() {
+export const revalidate = 300;
+
+export default async function HomePage() {
+  const projects = await getProjects();
   const featuredProjects = projects.slice(0, 5);
 
   return (

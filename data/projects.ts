@@ -561,19 +561,25 @@ export const projects: Project[] = [
   },
 ];
 
-export const projectStats = {
-  total: projects.length,
-  화공: projects.filter((p) => p.category === "화공").length,
-  발전: projects.filter((p) => p.category === "발전").length,
-  LNG: projects.filter((p) => p.category === "LNG").length,
-};
+export function computeProjectStats(projectList: Project[]) {
+  return {
+    total: projectList.length,
+    화공: projectList.filter((p) => p.category === "화공").length,
+    발전: projectList.filter((p) => p.category === "발전").length,
+    LNG: projectList.filter((p) => p.category === "LNG").length,
+  };
+}
+
+export const projectStats = computeProjectStats(projects);
 
 export const projectCategories: ProjectCategory[] = ["화공", "발전", "LNG"];
 
-export function getGroupedProjects(): Record<ProjectCategory, Project[]> {
+export function getGroupedProjects(
+  projectList: Project[] = projects,
+): Record<ProjectCategory, Project[]> {
   return {
-    화공: projects.filter((p) => p.category === "화공"),
-    발전: projects.filter((p) => p.category === "발전"),
-    LNG: projects.filter((p) => p.category === "LNG"),
+    화공: projectList.filter((p) => p.category === "화공"),
+    발전: projectList.filter((p) => p.category === "발전"),
+    LNG: projectList.filter((p) => p.category === "LNG"),
   };
 }

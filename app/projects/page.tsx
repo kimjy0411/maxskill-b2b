@@ -1,9 +1,11 @@
 import Link from "next/link";
 import ProjectsPageContent from "@/components/ProjectsPageContent";
-import { getGroupedProjects, projectStats } from "@/data/projects";
+import { getProjectsPageData } from "@/lib/projects";
 
-export default function ProjectsPage() {
-  const groupedProjects = getGroupedProjects();
+export const revalidate = 300;
+
+export default async function ProjectsPage() {
+  const { groupedProjects, projectStats, source } = await getProjectsPageData();
 
   return (
     <main>
@@ -50,6 +52,9 @@ export default function ProjectsPage() {
           </div>
           <p className="text-sm font-medium text-gray-400">
             Total {projectStats.total} Projects
+            {source === "sheet" && (
+              <span className="ml-2 text-brand-blue">· Google Sheet 연동</span>
+            )}
           </p>
         </div>
 
