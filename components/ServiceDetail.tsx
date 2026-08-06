@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Service } from "@/data/services";
 import { getServiceItemImage } from "@/data/serviceItemImages";
 
@@ -16,11 +17,13 @@ export default function ServiceDetail({
       className="scroll-mt-28 overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card sm:scroll-mt-32"
     >
       <div className="relative h-72 overflow-hidden sm:h-96">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={service.image}
           alt={service.imageAlt}
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 1024px"
+          priority={sectionId === "piping"}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/30 to-transparent" />
       </div>
@@ -80,11 +83,12 @@ export default function ServiceDetail({
                     >
                       {itemImage && (
                         <div className="relative h-44 overflow-hidden sm:h-48">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <Image
                             src={itemImage.src}
                             alt={itemImage.alt}
-                            className="h-full w-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 512px"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
                         </div>

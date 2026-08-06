@@ -76,7 +76,7 @@ export default async function ProjectsPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex rounded-full bg-brand-tan px-8 py-3.5 text-sm font-bold text-black transition-colors hover:bg-brand-tan-light"
+            className="mt-8 inline-flex rounded-full bg-brand-tan px-8 py-3.5 text-sm font-bold text-brand-blue transition-colors hover:bg-brand-tan-light"
           >
             무료 상담 신청하기
           </Link>

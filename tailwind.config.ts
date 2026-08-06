@@ -12,8 +12,8 @@ const config: Config = {
         brand: {
           blue: "#0085FF",
           "blue-dark": "#0066CC",
-          tan: "#D9A770",
-          "tan-light": "#E5C6A1",
+          tan: "#FFFFFF",
+          "tan-light": "#E8EEF4",
           dark: "#0F0F0F",
           card: "#1A1A1A",
           "card-border": "#2A2A2A",

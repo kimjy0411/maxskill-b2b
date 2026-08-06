@@ -20,6 +20,10 @@ export interface Service {
   imageAlt: string;
 }
 
+function serviceBanner(photoId: string) {
+  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=1600&q=80`;
+}
+
 export const services: Service[] = [
   {
     id: "piping",
@@ -95,8 +99,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: "/images/services/piping.jpg",
-    imageAlt: "정유 공장 배관과 파이프라인 전경",
+    image: serviceBanner("photo-1670689334896-8fa8291daa27"),
+    imageAlt: "화학 플랜트 배관·설비 전경 (Unsplash)",
   },
   {
     id: "stress",
@@ -172,8 +176,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: "/images/services/stress.jpg",
-    imageAlt: "야간 조명 아래 정유 플랜트 산업 설비",
+    image: serviceBanner("photo-1596980786765-775174984ec9"),
+    imageAlt: "정유·화학 플랜트 설비 (Unsplash)",
   },
   {
     id: "cad",
@@ -298,7 +302,7 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: "/images/services/cad.jpg",
+    image: serviceBanner("photo-1581092918056-0c4c3acd3789"),
     imageAlt: "엔지니어들이 컴퓨터에서 설계 도면을 검토하는 모습",
   },
   {
@@ -375,8 +379,8 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: "/images/services/programming.jpg",
-    imageAlt: "듀얼 모니터 개발 환경에서 소프트웨어 작업",
+    image: serviceBanner("photo-1555066931-4365d14bab8c"),
+    imageAlt: "설계 자동화 Programming (Unsplash)",
   },
 ];
 
