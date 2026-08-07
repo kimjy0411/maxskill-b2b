@@ -82,20 +82,31 @@ export default function ServiceDetail({
                       className="overflow-hidden rounded-xl border border-brand-card-border bg-brand-dark/40"
                     >
                       {itemImage && (
-                        <div className="relative h-44 overflow-hidden sm:h-48">
+                        <div
+                          className={
+                            itemImage.imageContainerClass ??
+                            "relative h-56 overflow-hidden bg-brand-dark sm:h-64"
+                          }
+                        >
                           <Image
                             src={itemImage.src}
                             alt={itemImage.alt}
                             fill
-                            className="object-cover"
+                            className={
+                              itemImage.imageClass ?? "object-cover object-center"
+                            }
                             sizes="(max-width: 1024px) 100vw, 512px"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
                         </div>
                       )}
-                      <div className="p-5 sm:p-6">
+                      <div
+                        className={
+                          itemImage.imageBodyClass ??
+                          "px-4 pb-5 pt-3 sm:px-5 sm:pb-6 sm:pt-4"
+                        }
+                      >
                         <p className="font-semibold text-white">{item.name}</p>
-                        <p className="mt-2 break-keep text-sm leading-7 text-gray-400">
+                        <p className="mt-1.5 break-keep text-xs leading-6 text-gray-400 sm:text-sm">
                           {item.description}
                         </p>
                       </div>

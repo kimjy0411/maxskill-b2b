@@ -4,8 +4,7 @@ export default function CareersBanner() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80)",
+          backgroundImage: "url(/images/careers/banner.jpg)",
         }}
         aria-hidden
       />

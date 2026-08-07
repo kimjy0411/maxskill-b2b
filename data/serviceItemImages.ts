@@ -4,14 +4,34 @@ export function getServiceItemImageKey(serviceId: string, itemName: string) {
 
 const ITEMS_BASE = "/images/services/items";
 
-function itemImage(filename: string, alt: string) {
-  return { src: `${ITEMS_BASE}/${filename}`, alt, filename };
+function itemImage(
+  filename: string,
+  alt: string,
+  imageClass?: string,
+  imageContainerClass?: string,
+  imageBodyClass?: string,
+) {
+  return {
+    src: `${ITEMS_BASE}/${filename}`,
+    alt,
+    filename,
+    imageClass,
+    imageContainerClass,
+    imageBodyClass,
+  };
 }
 
 /** 로컬 public/images/services/items/ 파일 — GitHub에서 같은 이름으로 교체 가능 */
 export const serviceItemImages: Record<
   string,
-  { src: string; alt: string; filename: string }
+  {
+    src: string;
+    alt: string;
+    filename: string;
+    imageClass?: string;
+    imageContainerClass?: string;
+    imageBodyClass?: string;
+  }
 > = {
   // ── Piping Design ──
   "piping/Project Scheduling": itemImage(
@@ -20,57 +40,65 @@ export const serviceItemImages: Record<
   ),
   "piping/Coordination": itemImage(
     "piping-coordination.jpg",
-    "공종 간 설계 협업 및 Coordination",
+    "3D 모델·Plot Plan 검토 — 다공종 Coordination",
   ),
   "piping/Plot Plan": itemImage(
     "piping-plot-plan.jpg",
-    "플랜트 전경 및 Plot Plan 설비 배치",
+    "P&ID·Plot Plan — 설비·배관 배치 및 Tag 정합",
   ),
   "piping/3D Plan Dwg. / ISO Dwg.": itemImage(
     "piping-iso-dwg.jpg",
-    "플랜트 배관 및 ISO 도면용 Pipe Detail",
+    "시공용 Isometric 배관 도면 — Line Number·Support·치수 표기",
   ),
   "piping/Stress ISO Dwg.": itemImage(
     "piping-stress-iso.jpg",
-    "플랜트 배관 Stress Analysis 연계 ISO",
+    "ROHR2 배관 모델 — Support 표기 및 Stress 해석 결과",
   ),
   "piping/Support Detail Dwg.": itemImage(
     "piping-support-detail.jpg",
-    "배관 Support 및 Pipe Connection Detail",
+    "Pipe Support Detail 도면 — Spring Hanger·Guide·BOM",
   ),
   "piping/Information Dwg. etc": itemImage(
     "piping-information-dwg.jpg",
-    "Engineering Drawing 및 Information 도면",
+    "Line List·Valve List 등 Information 도면 및 부속 문서",
   ),
 
   // ── Stress Analysis ──
   "stress/Thermal Analysis": itemImage(
     "stress-thermal-analysis.jpg",
-    "야간 정유·화학 플랜트 Thermal Analysis 대상 설비",
+    "CAESAR II — Thermal Load Case·Allowable Stress 해석",
+    "object-cover object-[42%_50%]",
   ),
   "stress/Load Case Review": itemImage(
     "stress-load-case.jpg",
-    "고압 배관 Load Case 검토",
+    "Static Analysis Load Case Editor — 온도·Load 조합 검토",
+    "object-cover object-[40%_12%]",
   ),
   "stress/Analysis Report": itemImage(
     "stress-analysis-report.jpg",
-    "플랜트 설계 Analysis Report 작성",
+    "Code Stress by Percent — 해석 결과 3D 시각화",
+    "object-cover object-[35%_50%]",
   ),
   "stress/Special Support": itemImage(
     "stress-special-support.jpg",
-    "Special Support 및 기계 부품",
+    "Special Support Detail Drawing",
+    "object-cover object-center",
   ),
   "stress/Support Optimization": itemImage(
     "stress-support-optimization.jpg",
-    "배관 Support 위치 최적화",
+    "E3D 3D Plant Model — Support 위치·최적화 Review",
+    "object-cover object-center",
   ),
   "stress/Trouble Shooting": itemImage(
     "stress-trouble-shooting.jpg",
-    "야간 운전 플랜트 Trouble Shooting",
+    "Expansion Joint 현장 Damage — Trouble Shooting",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
   "stress/Field Support": itemImage(
     "stress-field-support.jpg",
     "현장 배관·설비 Field Support",
+    "object-cover object-center",
   ),
 
   // ── 3D CAD ──
@@ -80,7 +108,7 @@ export const serviceItemImages: Record<
   ),
   "cad/P&ID Check Admin.": itemImage(
     "cad-pid-admin.jpg",
-    "P&ID Check Admin 및 현장 설계 검토",
+    "P&ID Check Admin — Support Drawing 및 설계 검토",
   ),
   "cad/SPEC / CATA Management": itemImage(
     "cad-spec-cata.jpg",
@@ -104,7 +132,7 @@ export const serviceItemImages: Record<
   ),
   "cad/Clash Check": itemImage(
     "cad-clash-check.jpg",
-    "3D Clash Check 및 간섭 검토",
+    "3D Clash Check — 배관·구조물 Hard Clash 검출",
   ),
   "cad/3D Product Line Check": itemImage(
     "cad-product-line-check.jpg",
@@ -128,7 +156,8 @@ export const serviceItemImages: Record<
   ),
   "cad/3D 3rd Party Program": itemImage(
     "cad-3rd-party.jpg",
-    "3D 3rd Party Program 연동",
+    "Navisworks — PDMS·Tekla·IFC 등 멀티 디시플린 3D 모델 통합 리뷰",
+    "object-cover object-[50%_38%]",
   ),
 
   // ── Programming ──
