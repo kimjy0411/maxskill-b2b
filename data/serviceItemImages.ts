@@ -36,31 +36,42 @@ export const serviceItemImages: Record<
   // ── Piping Design ──
   "piping/Project Scheduling": itemImage(
     "piping-project-scheduling.jpg",
-    "건축·플랜트 Blueprint 및 프로젝트 일정 계획",
+    "E3D Pipe Rack Top View — WBS·일정 계획용 전체 배관 레이아웃",
+    "object-cover object-center",
   ),
   "piping/Coordination": itemImage(
     "piping-coordination.jpg",
-    "3D 모델·Plot Plan 검토 — 다공종 Coordination",
+    "E3D Clash Check — 다공종 Coordination·간섭 검토",
+    "object-cover object-center",
   ),
   "piping/Plot Plan": itemImage(
     "piping-plot-plan.jpg",
-    "P&ID·Plot Plan — 설비·배관 배치 및 Tag 정합",
+    "E3D Plant Model — 설비·구조·배관 Plot Plan 배치",
+    "object-cover object-center",
   ),
   "piping/3D Plan Dwg. / ISO Dwg.": itemImage(
     "piping-iso-dwg.jpg",
-    "시공용 Isometric 배관 도면 — Line Number·Support·치수 표기",
+    "CAESAR II Isometric — 시공용 ISO 도면·Support·치수",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
   "piping/Stress ISO Dwg.": itemImage(
     "piping-stress-iso.jpg",
-    "ROHR2 배관 모델 — Support 표기 및 Stress 해석 결과",
+    "CAESAR II Stress ISO — Support·Node·Elevation 표기",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
   "piping/Support Detail Dwg.": itemImage(
     "piping-support-detail.jpg",
-    "Pipe Support Detail 도면 — Spring Hanger·Guide·BOM",
+    "Support Detail Drawing — LOOKING EAST·Section·Base Plate",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-black sm:h-64",
   ),
   "piping/Information Dwg. etc": itemImage(
     "piping-information-dwg.jpg",
-    "Line List·Valve List 등 Information 도면 및 부속 문서",
+    "Stress List — Line No·ISO Dwg No 등 Information Sheet",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
 
   // ── Stress Analysis ──
@@ -97,8 +108,9 @@ export const serviceItemImages: Record<
   ),
   "stress/Field Support": itemImage(
     "stress-field-support.jpg",
-    "현장 배관·설비 Field Support",
+    "Support Detail Drawing — Field Support·Spring Hanger Setting",
     "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
 
   // ── 3D CAD ──
