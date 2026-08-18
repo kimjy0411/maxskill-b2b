@@ -1,10 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { companyInfo, services } from "@/data/company";
 
 const companyLinks = [
   { href: "/about", label: "회사소개" },
   { href: "/projects", label: "프로젝트" },
-  { href: "/careers/hr", label: "인사제도" },
   { href: "/careers", label: "채용정보" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -20,9 +20,13 @@ export default function Footer() {
       <div className="section-container py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <p className="brand-font text-2xl text-white">
-              {companyInfo.nameEn}
-            </p>
+            <Image
+              src="/images/logo-maxskill-white.png"
+              alt="MaxSkill"
+              width={205}
+              height={66}
+              className="h-14 w-auto"
+            />
             <p className="mt-4 max-w-md text-sm leading-7 text-white/80">
               {companyInfo.description}
             </p>

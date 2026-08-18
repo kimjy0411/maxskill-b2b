@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectTable from "@/components/ProjectTable";
-import { companyInfo, capabilities, services, getServiceCardItems } from "@/data/company";
+import { companyInfo, services, getServiceCardItems } from "@/data/company";
 import { getProjects } from "@/lib/projects";
 
 export const revalidate = 300;
@@ -15,21 +15,6 @@ export default async function HomePage() {
   return (
     <main>
       <HeroSection />
-      {/* Capability Stats */}
-      <section className="border-y border-white/5 bg-brand-card">
-        <div className="section-container grid grid-cols-1 divide-y divide-white/5 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {capabilities.map((cap) => (
-            <div key={cap.label} className="px-4 py-10 text-center">
-              <p className="text-3xl font-bold text-brand-blue sm:text-4xl">
-                {cap.value}
-                <span className="ml-1 text-lg text-gray-400">{cap.unit}</span>
-              </p>
-              <p className="mt-2 text-sm text-gray-400">{cap.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Services Preview */}
       <section className="section-container py-20 sm:py-28">
         <SectionHeading

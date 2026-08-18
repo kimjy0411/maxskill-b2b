@@ -32,15 +32,15 @@ export const services: Service[] = [
     summary:
       "Planning · Basic Design · Detail Design — 배관 설계 전 공정 One-Stop 수행",
     intro: [
-      "맥스킬은 화공·발전·LNG 플랜트 프로젝트에서 배관 설계(Piping Design) 전 공정을 수행합니다. 평균 경력 19.4년, 57명의 Piping Designer가 Project Scheduling·Coordination부터 Detail Design 도면까지 일관된 품질 기준으로 프로젝트를 지원합니다.",
+      "맥스킬은 화공·발전·LNG 플랜트 프로젝트에서 배관 설계(Piping Design) 전 공정을 수행합니다. 숙련된 Piping Designer가 Project Scheduling·Coordination부터 Detail Design 도면까지 일관된 품질 기준으로 프로젝트를 지원합니다.",
       "Planning 단계에서는 WBS·마일스톤 기반 일정 수립과 Mechanical, Instrument, Electrical, Civil 등 유관 공종 간 인터페이스를 조율합니다. Basic Design에서는 Plot Plan을 통해 배관 라우팅·설비 배치·공간 활용을 최적화하고, Detail Design에서는 3D Plan/ISO, Stress ISO, Support Detail, Information 도면까지 실무에 바로 적용 가능한 산출물을 제공합니다.",
-      "국내외 대형 EPC 프로젝트에서 축적된 35,000 Lines/Year 규모의 설계 경험을 바탕으로, 설계 변경·현장 대응·재작업을 최소화하는 실용적인 배관 설계 솔루션을 제공합니다.",
+      "국내외 대형 EPC 프로젝트에서 축적된 설계 경험을 바탕으로, 설계 변경·현장 대응·재작업을 최소화하는 실용적인 배관 설계 솔루션을 제공합니다.",
     ],
     highlights: [
       "Planning → Basic Design → Detail Design 단계별 체계적 수행",
       "3D Plan / ISO / Stress ISO / Support Detail 도면 일괄 제공",
       "화공·발전·LNG 분야 대형 프로젝트 다수 수행",
-      "평균 19.4년 경력 Piping Designer 57명",
+      "숙련된 Piping Designer 전문 인력",
     ],
     sections: [
       {
@@ -51,7 +51,7 @@ export const services: Service[] = [
           {
             name: "Project Scheduling",
             description:
-              "설계 WBS, 마일스톤, 공정별 M/H 산출 및 일정 관리. FEED·Detail Design 단계별 리소스 배분과 Critical Path 관리를 수행합니다.",
+              "설계 WBS에 의한 배관설계 마일스톤, M/H 산출 및 일정 관리를 수행합니다.",
           },
           {
             name: "Coordination",
@@ -68,7 +68,7 @@ export const services: Service[] = [
           {
             name: "Plot Plan",
             description:
-              "Equipment, Structure, Pipe Rack, Utility, Roadway 등을 반영한 배관·설비 배치도 작성. 배관 라우팅, Valve Access, Maintenance Space, 향후 확장성을 고려한 최적 배치안을 제시합니다.",
+              "Equipment, Structure, Pipe Rack, Utility, Roadway 등을 반영한 설비 배치도, Pipe Routing, Valve Access, Maintenance Space 및 향후 확장성을 고려한 최적 배치안을 제시합니다.",
           },
         ],
       },
@@ -109,7 +109,7 @@ export const services: Service[] = [
     summary:
       "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석 전문",
     intro: [
-      "맥스킬 Stress Analysis 팀은 평균 20.3년 경력의 Stress Engineer 5명이 Thermal Analysis, Special Support 설계, Trouble Shooting을 수행합니다. CAESAR II 등 업계 표준 해석 도구를 활용하여 배관系의 안전성·신뢰성을 검증합니다.",
+      "맥스킬 Stress Analysis 팀은 고경력의 Stress Engineer가 Thermal Analysis, Special Support 설계, Trouble Shooting을 수행합니다. CAESAR II 등 업계 표준 해석 도구를 활용하여 배관 관련 안전성·신뢰성을 검증합니다.",
       "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대해서도 신속한 해석·대안 제시가 가능합니다. Piping Design과 유기적으로 연계되어 Stress ISO 도면까지 일관된 품질로 제공합니다.",
       "국내외 화공·발전·LNG 프로젝트에서 High Temperature·High Pressure 배관, Critical Line에 대한 해석 경험을 보유하고 있으며, Owner·EPC·Contractor 요구 Specification에 맞춘 해석 보고서를 작성합니다.",
     ],
@@ -117,13 +117,13 @@ export const services: Service[] = [
       "Thermal·Sustained·Occasional Load Case 종합 검토",
       "Special Support·Spring Hanger·Expansion Joint 설계",
       "현장 Trouble Shooting 및 긴급 해석 대응",
-      "평균 20.3년 경력 Stress Engineer 전문 인력",
+      "고경력 Stress Engineer 전문 인력",
     ],
     sections: [
       {
         title: "Thermal Analysis",
         description:
-          "온도 변화에 따른 배관系의 열팽창·응력·변위를 해석하여 안전한 배관 설계를 지원합니다.",
+          "온도 변화에 따른 배관 관련 열팽창·응력·변위를 해석하여 안전한 배관 설계를 지원합니다.",
         items: [
           {
             name: "Thermal Analysis",
@@ -133,46 +133,46 @@ export const services: Service[] = [
           {
             name: "Load Case Review",
             description:
-              "Sustained, Expansion, Occasional(Wind, Seismic, Water Hammer) Load 조합 검토. Support Gap, Cold Spring, Expansion Loop 적정성 평가.",
+              "Sustained, Expansion, Occasional(Wind, Seismic, Water Hammer) Load 조합 검토. Support Gap, Cold Spring, Expansion Loop 적정성 평가를 수행합니다.",
           },
           {
             name: "Analysis Report",
             description:
-              "Stress Mark-up, Support Load Summary, Nozzle Load Table, Critical Line List 등 해석 보고서 및 Piping Design 연계 산출물 제공.",
+              "Stress Mark-up, Support Load Summary, Nozzle Load Table, Critical Line List 등 해석 보고서 및 Piping Design 연계 산출물을 제공합니다.",
           },
         ],
       },
       {
         title: "Special Support",
         description:
-          "일반 Standard Support로 해결되지 않는 구간에 대한 특수 지지대·스프링 행거 설계를 수행합니다.",
+          "일반 Standard Support로 해결되지 않는 구간에 대한 특수 지지대·Spring Hanger 설계를 수행합니다.",
         items: [
           {
             name: "Special Support",
             description:
-              "Spring Hanger, Constant Support, Guide, Anchor, Expansion Joint 등 Special Support 선정 및 Detail Design. Manufacturer Catalogue 연계 및 Custom Support 설계.",
+              "Spring Hanger, Constant Support, Guide, Anchor, Expansion Joint 등 Special Support 선정 및 Detail Design. Manufacturer Catalogue와 연계하여 Custom Support를 설계합니다.",
           },
           {
             name: "Support Optimization",
             description:
-              "Support 수량·위치 최적화를 통한 응력·변위 만족 및 경제성 확보. Existing Plant Tie-in 구간 Support Review.",
+              "Support 수량·위치 최적화를 통한 응력·변위 만족 및 경제성 확보. Existing Plant Tie-in 구간 Support Review를 수행합니다.",
           },
         ],
       },
       {
         title: "Trouble Shooting",
         description:
-          "시공·운전 중 발생하는 배관系 이슈에 대한 신속한 원인 분석 및 해결책을 제시합니다.",
+          "시공·운전 중 발생하는 배관 관련 이슈에 대한 신속한 원인 분석 및 해결책을 제시합니다.",
         items: [
           {
             name: "Trouble Shooting",
             description:
-              "Support Damage, Vibration, Leak, Misalignment 등 현장 이슈 긴급 해석. Root Cause Analysis 및 Retrofit Support 설계, As-built 조건 반영 Re-analysis.",
+              "Support Damage, Vibration, Leak, Misalignment 등 현장 이슈 긴급 해석. Root Cause Analysis 및 Retrofit Support 설계, As-built 조건 반영 Re-analysis를 수행합니다.",
           },
           {
             name: "Field Support",
             description:
-              "현장 실측 데이터 반영, Hot/Cold Position Check, Spring Hanger Setting Verification 등 시공·Commissioning 단계 기술 지원.",
+              "현장 실측 데이터 반영, Hot/Cold Position Check, Spring Hanger Setting Verification 등 시공·Commissioning 단계 기술을 지원합니다.",
           },
         ],
       },
@@ -314,7 +314,7 @@ export const services: Service[] = [
     intro: [
       "맥스킬 Programming 서비스는 플랜트 설계·시공·운영 현장의 반복 업무를 자동화하고, 3D CAD·Piping Design·Stress Analysis 업무와 연계되는 맞춤형 프로그램을 개발합니다.",
       "P&ID Check, BOM·ISO 도면 자동 생성, Management Program, 3D 3rd Party Program 연동 등 실무에서 즉시 활용 가능한 솔루션을 제공하며, 기존 Commercial Software의 Customizing과 신규 Program Development, Trouble Shooting까지 One-Stop으로 지원합니다.",
-      "프로젝트별 Workflow·Specification·산출물 형식에 맞춘 프로그램을 개발하여 설계 오류를 줄이고, M/H 절감과 납기 단축에 기여합니다. 연간 170,000 M/H 규모의 설계 프로젝트 경험을 바탕으로 현장 요구에 부합하는 실용적인 프로그램을 제공합니다.",
+      "프로젝트별 Workflow·Specification·산출물 형식에 맞춘 프로그램을 개발하여 설계 오류를 줄이고, M/H 절감과 납기 단축에 기여합니다. 축적된 설계 프로젝트 경험을 바탕으로 현장 요구에 부합하는 실용적인 프로그램을 제공합니다.",
     ],
     highlights: [
       "3D CAD·Piping·Stress 업무 연계 맞춤 개발",

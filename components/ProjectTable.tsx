@@ -2,7 +2,7 @@ import type { Project, ProjectCategory } from "@/data/projects";
 
 const columns = [
   { key: "name", label: "프로젝트", accent: "text-brand-tan" },
-  { key: "client", label: "원도급사", accent: "text-brand-blue" },
+  { key: "client", label: "발주처", accent: "text-brand-blue" },
   { key: "category", label: "화공/발전/LNG", accent: "text-brand-blue" },
   { key: "year", label: "Year", accent: "text-brand-blue" },
   { key: "location", label: "Location", accent: "text-brand-blue" },
@@ -32,7 +32,7 @@ function TableHeader() {
         {columns.map((col) => (
           <th
             key={col.key}
-            className={`px-5 py-4 text-left text-sm font-extrabold tracking-wide sm:px-6 sm:text-base ${col.accent}`}
+            className={`whitespace-nowrap px-5 py-4 text-left text-sm font-extrabold tracking-wide sm:px-6 sm:text-base ${col.accent}`}
           >
             {col.label}
           </th>

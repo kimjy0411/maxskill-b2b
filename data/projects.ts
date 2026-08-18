@@ -380,7 +380,7 @@ export const projects: Project[] = [
   {
     id: 37,
     name: "KSA JUBAIL NET COGENERATION IPP Project",
-    client: "SAMSUNG S&T",
+    client: "삼성물산(주)",
     category: "발전",
     year: 2024,
     location: "Saudi",
@@ -400,7 +400,7 @@ export const projects: Project[] = [
   {
     id: 39,
     name: "KSA Amiral Cogen IPP",
-    client: "SAMSUNG S&T",
+    client: "삼성물산(주)",
     category: "발전",
     year: 2024,
     location: "Saudi",

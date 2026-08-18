@@ -1,12 +1,6 @@
 import SectionHeading from "@/components/SectionHeading";
 import HeroSlideshow from "@/components/HeroSlideshow";
-import {
-  companyInfo,
-  history,
-  hrStats,
-  totalHR,
-  capabilities,
-} from "@/data/company";
+import { companyInfo, history } from "@/data/company";
 
 export default function AboutPage() {
   return (
@@ -17,8 +11,12 @@ export default function AboutPage() {
           <h1 className="page-title mt-5 max-w-3xl">
             <span className="text-brand-blue">회사</span> 소개
           </h1>
-          <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-gray-300 sm:text-lg">
-            {companyInfo.description}
+          <p className="mt-6 max-w-4xl break-keep text-base leading-8 text-gray-300 sm:text-lg">
+            화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design,
+            Stress Analysis, 3D CAD,
+            <br />
+            Programming 분야의 축적된 기술력을 바탕으로 최고의 솔루션을
+            제공합니다.
           </p>
         </div>
       </HeroSlideshow>
@@ -74,57 +72,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* HR Stats */}
-      <section className="border-y border-white/5 bg-brand-card">
-        <div className="section-container py-20 sm:py-28">
-          <SectionHeading
-            label="Human Resource"
-            title="인적 역량"
-            description={`전체 평균 경력 ${totalHR.avgCareer}, 총 ${totalHR.count}명의 전문 인력이 프로젝트를 수행합니다.`}
-          />
-
-          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {hrStats.map((stat) => (
-              <div
-                key={stat.role}
-                className="rounded-2xl border border-brand-card-border bg-brand-dark p-6 text-center"
-              >
-                <p className="text-3xl font-bold text-brand-blue">
-                  {stat.ratio}
-                </p>
-                <p className="mt-2 font-semibold text-white">{stat.role}</p>
-                <p className="mt-1 text-sm text-gray-400">
-                  {stat.years} · {stat.count}명
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Capability */}
-      <section className="section-container py-20 sm:py-28">
-        <SectionHeading
-          label="Capability"
-          title="수행 역량"
-          description="연간 처리 가능한 설계 규모"
-        />
-
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {capabilities.map((cap) => (
-            <div
-              key={cap.label}
-              className="rounded-2xl border border-brand-card-border bg-brand-card p-8 text-center"
-            >
-              <p className="text-4xl font-bold text-brand-blue">
-                {cap.value}
-                <span className="ml-2 text-lg text-gray-400">{cap.unit}</span>
-              </p>
-              <p className="mt-3 text-sm text-gray-400">{cap.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

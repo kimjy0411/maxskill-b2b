@@ -1,4 +1,3 @@
-import ContactForm from "@/components/ContactForm";
 import { companyInfo } from "@/data/company";
 
 export default function ContactPage() {
@@ -19,7 +18,7 @@ export default function ContactPage() {
       </section>
 
       <section className="section-container py-20 sm:py-28">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="max-w-2xl">
           <div>
             <h2 className="text-2xl font-bold text-white">연락처 정보</h2>
             <div className="mt-8 space-y-6">
@@ -49,16 +48,6 @@ export default function ContactPage() {
               >
                 이메일 보내기
               </a>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-brand-card-border bg-brand-card p-8 sm:p-10">
-            <h2 className="text-2xl font-bold text-white">문의 양식</h2>
-            <p className="mt-2 text-sm text-gray-400">
-              아래 양식을 작성해 주시면 빠르게 답변 드리겠습니다.
-            </p>
-            <div className="mt-8">
-              <ContactForm />
             </div>
           </div>
         </div>

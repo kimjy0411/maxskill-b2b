@@ -46,7 +46,7 @@ export default function ServiceCard({
           </svg>
         </div>
 
-        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <h3 className="whitespace-nowrap text-xl font-bold text-white">{title}</h3>
         <p className="mt-4 flex-1 text-sm leading-7 text-gray-400">
           {summary}
         </p>

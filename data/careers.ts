@@ -1,8 +1,7 @@
 export const careersBannerText =
-  "미소짓는 든든한 친구같은 회사 언제나 열린마음으로 작은소리까지 귀 기울여 듣겠습니다.";
+  "맥스킬에서는 함께 할 유능한 인재를 찾고 있습니다.";
 
 export const careersNav = [
-  { href: "/careers/hr", label: "인사제도" },
   { href: "/careers", label: "채용정보" },
 ] as const;
 

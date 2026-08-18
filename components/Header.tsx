@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -47,9 +48,17 @@ export default function Header() {
       <div className="flex w-full items-center justify-between py-6 pl-5 pr-5 sm:pl-8 sm:pr-8 lg:pl-10 lg:pr-10">
         <Link
           href="/"
-          className="brand-font shrink-0 text-xl text-white sm:text-2xl"
+          className="shrink-0"
+          aria-label="MaxSkill 홈"
         >
-          MAXSKILL
+          <Image
+            src="/images/logo-maxskill.png"
+            alt="MaxSkill"
+            width={205}
+            height={66}
+            className="h-9 w-auto sm:h-11"
+            priority
+          />
         </Link>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-12 lg:flex xl:gap-16 2xl:gap-20">
@@ -141,7 +150,7 @@ export default function Header() {
 
           <div className="group relative">
             <Link
-              href="/careers/hr"
+              href="/careers"
               className={`nav-link transition-colors ${
                 careersActive
                   ? "text-brand-blue"

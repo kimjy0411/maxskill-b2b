@@ -23,24 +23,6 @@ export default async function ProjectsPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 bg-brand-card">
-        <div className="section-container grid grid-cols-2 divide-x divide-white/5 sm:grid-cols-4">
-          {[
-            { label: "총 프로젝트", value: projectStats.total },
-            { label: "화공", value: projectStats.화공 },
-            { label: "발전", value: projectStats.발전 },
-            { label: "LNG", value: projectStats.LNG },
-          ].map((stat) => (
-            <div key={stat.label} className="px-4 py-8 text-center sm:py-10">
-              <p className="text-3xl font-bold text-brand-blue sm:text-4xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-sm text-gray-400">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="section-container-wide py-16 sm:py-20 lg:py-24">
         <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
           <div>

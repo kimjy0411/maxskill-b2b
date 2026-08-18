@@ -7,6 +7,7 @@ const HEADER_ALIASES: Record<string, keyof RowFields> = {
   프로젝트: "name",
   client: "client",
   원도급사: "client",
+  발주처: "client",
   category: "category",
   분야: "category",
   "화공/발전/lng": "category",
@@ -90,6 +91,7 @@ function isHeaderRow(cells: string[]): boolean {
   return (
     joined.includes("프로젝트") ||
     joined.includes("원도급") ||
+    joined.includes("발주처") ||
     cells.some((cell) => HEADER_ALIASES[cell.trim().toLowerCase()] !== undefined)
   );
 }
@@ -117,10 +119,12 @@ function mapRow(
   const year = Number.parseInt(fields.year ?? "", 10);
   if (!Number.isFinite(year)) return null;
 
+  const client = fields.client?.trim() || "-";
+
   return {
     id: 0,
     name,
-    client: fields.client?.trim() || "-",
+    client: client.toUpperCase() === "SAMSUNG S&T" ? "삼성물산(주)" : client,
     category,
     year,
     location: fields.location?.trim() || "-",
