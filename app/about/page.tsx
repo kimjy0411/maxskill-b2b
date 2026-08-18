@@ -34,7 +34,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-brand-blue/80" />
 
-        <div className="section-container relative z-10 flex min-h-[480px] flex-col justify-end pb-14 pt-16 text-center sm:min-h-[560px] sm:pb-20 sm:pt-20">
+        <div className="section-container relative z-10 flex min-h-[600px] flex-col justify-end pb-14 pt-16 text-center sm:min-h-[680px] sm:pb-20 sm:pt-20">
           <p className="page-subtitle text-white/70">Vision</p>
           <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
             {companyInfo.vision}
