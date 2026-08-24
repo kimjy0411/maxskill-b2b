@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CareersBanner from "@/components/CareersBanner";
+import JobPostingNotice from "@/components/JobPostingNotice";
+import JobPostingViewTracker from "@/components/JobPostingViewTracker";
 import { companyInfo } from "@/data/company";
-import { getJobPosting, getJobPostings } from "@/lib/jobPostings";
+import { getAdjacentJobPostings, getJobPosting, getJobPostings } from "@/lib/jobPostings";
 
 export const revalidate = 300;
 
@@ -23,15 +25,21 @@ export async function generateMetadata({ params }: JobPostingPageProps) {
 
   return {
     title: `${posting.title} | 채용정보 | MAXSKILL`,
-    description: posting.content[0] ?? posting.title,
+    description: posting.duty ?? posting.content[0] ?? posting.title,
   };
 }
 
 export default async function JobPostingPage({ params }: JobPostingPageProps) {
-  const posting = await getJobPosting(Number(params.id));
+  const postingId = Number(params.id);
+  const [posting, postings] = await Promise.all([
+    getJobPosting(postingId),
+    getJobPostings(),
+  ]);
   if (!posting) notFound();
+  const { previous, next } = getAdjacentJobPostings(postings, posting.id);
 
-  const applyHref = `mailto:${companyInfo.email}?subject=${encodeURIComponent(
+  const applyEmail = posting.contactEmail || companyInfo.email;
+  const applyHref = `mailto:${applyEmail}?subject=${encodeURIComponent(
     `[채용지원] ${posting.title}`,
   )}`;
 
@@ -49,6 +57,7 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
       </section>
 
       <section className="section-container py-16 sm:py-20">
+        <JobPostingViewTracker id={posting.id} />
         <CareersBanner />
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-brand-card sm:mt-12">
@@ -84,21 +93,8 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
           </dl>
         </div>
 
-        <article className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-brand-card p-8 sm:p-10">
-          {posting.content.length > 0 ? (
-            posting.content.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 40)}
-                className="break-keep text-base leading-8 text-gray-300"
-              >
-                {paragraph}
-              </p>
-            ))
-          ) : (
-            <p className="break-keep text-base leading-8 text-gray-400">
-              상세 내용은 이메일로 문의해 주시기 바랍니다.
-            </p>
-          )}
+        <article className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-brand-card p-6 sm:p-10">
+          <JobPostingNotice posting={posting} />
 
           <div className="flex flex-wrap gap-3 pt-4">
             {posting.status === "진행중" && (
@@ -117,6 +113,27 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
             </Link>
           </div>
         </article>
+
+        <nav className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
+          {previous && (
+            <Link
+              href={`/careers/${previous.id}`}
+              className="flex items-center justify-between gap-4 border-b border-white/5 px-6 py-4 text-sm hover:bg-white/[0.03]"
+            >
+              <span className="text-gray-500">이전글</span>
+              <span className="truncate text-gray-200">{previous.title}</span>
+            </Link>
+          )}
+          {next && (
+            <Link
+              href={`/careers/${next.id}`}
+              className="flex items-center justify-between gap-4 px-6 py-4 text-sm hover:bg-white/[0.03]"
+            >
+              <span className="text-gray-500">다음글</span>
+              <span className="truncate text-gray-200">{next.title}</span>
+            </Link>
+          )}
+        </nav>
       </section>
     </main>
   );

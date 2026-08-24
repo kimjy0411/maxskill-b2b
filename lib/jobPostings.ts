@@ -1,40 +1,46 @@
-import { jobPostings as fallbackJobPostings } from "@/data/careers";
 import type { JobPosting } from "@/data/careers";
+import { fetchJobPostingsFromGoogleSheet } from "@/lib/googleSheetJobPostings";
 import {
-  fetchJobPostingsFromGoogleSheet,
-  resolveJobStatus,
-} from "@/lib/googleSheetJobPostings";
-
-function withResolvedStatus(postings: JobPosting[]): JobPosting[] {
-  return postings.map((posting) => ({
-    ...posting,
-    status: resolveJobStatus(posting.status, posting.periodEnd),
-  }));
-}
+  getFallbackJobPostings,
+  readLocalJobPostings,
+} from "@/lib/jobBoardStore";
 
 export async function getJobPostings(): Promise<JobPosting[]> {
   const csvUrl = process.env.GOOGLE_SHEETS_CAREERS_CSV_URL;
 
-  if (!csvUrl) {
-    return withResolvedStatus(fallbackJobPostings);
+  if (csvUrl) {
+    try {
+      const sheetPostings = await fetchJobPostingsFromGoogleSheet(csvUrl);
+      if (sheetPostings.length > 0) {
+        return sheetPostings;
+      }
+      console.warn(
+        "Google Sheet returned no valid job postings; using local board.",
+      );
+    } catch (error) {
+      console.error("Failed to load job postings from Google Sheet:", error);
+    }
   }
 
   try {
-    const sheetPostings = await fetchJobPostingsFromGoogleSheet(csvUrl);
-    if (sheetPostings.length === 0) {
-      console.warn(
-        "Google Sheet returned no valid job postings; using local fallback.",
-      );
-      return withResolvedStatus(fallbackJobPostings);
-    }
-    return sheetPostings;
-  } catch (error) {
-    console.error("Failed to load job postings from Google Sheet:", error);
-    return withResolvedStatus(fallbackJobPostings);
+    return await readLocalJobPostings();
+  } catch {
+    return getFallbackJobPostings();
   }
 }
 
 export async function getJobPosting(id: number): Promise<JobPosting | undefined> {
   const postings = await getJobPostings();
   return postings.find((posting) => posting.id === id);
+}
+
+export function getAdjacentJobPostings(
+  postings: JobPosting[],
+  id: number,
+) {
+  const index = postings.findIndex((posting) => posting.id === id);
+  return {
+    previous: index > 0 ? postings[index - 1] : undefined,
+    next: index >= 0 && index < postings.length - 1 ? postings[index + 1] : undefined,
+  };
 }

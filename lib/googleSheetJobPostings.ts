@@ -17,6 +17,30 @@ const HEADER_ALIASES: Record<string, keyof RowFields> = {
   views: "views",
   내용: "content",
   content: "content",
+  채용구분: "hireType",
+  채용: "hireType",
+  hiretype: "hireType",
+  지원: "experience",
+  experience: "experience",
+  학력: "education",
+  education: "education",
+  채용분야: "field",
+  field: "field",
+  담당업무: "duty",
+  duty: "duty",
+  자격요건: "qualification",
+  qualification: "qualification",
+  채용인원: "headcount",
+  headcount: "headcount",
+  공통자격: "commonQualifications",
+  전형방법: "process",
+  접수방법: "applyMethod",
+  기타사항: "notes",
+  담당자: "contactName",
+  부서: "contactDept",
+  문의전화: "contactPhone",
+  "e-mail": "contactEmail",
+  email: "contactEmail",
 };
 
 interface RowFields {
@@ -29,6 +53,21 @@ interface RowFields {
   status: string;
   views: string;
   content: string;
+  hireType: string;
+  experience: string;
+  education: string;
+  field: string;
+  duty: string;
+  qualification: string;
+  headcount: string;
+  commonQualifications: string;
+  process: string;
+  applyMethod: string;
+  notes: string;
+  contactName: string;
+  contactDept: string;
+  contactPhone: string;
+  contactEmail: string;
 }
 
 function parseCsv(text: string): string[][] {
@@ -174,6 +213,21 @@ function mapRow(
     status: resolveJobStatus(fields.status, periodEnd),
     views: Number.parseInt(fields.views ?? "0", 10) || 0,
     content: splitContent(fields.content ?? ""),
+    hireType: fields.hireType?.trim() || undefined,
+    experience: fields.experience?.trim() || undefined,
+    education: fields.education?.trim() || undefined,
+    field: fields.field?.trim() || undefined,
+    duty: fields.duty?.trim() || undefined,
+    qualification: fields.qualification?.trim() || undefined,
+    headcount: fields.headcount?.trim() || undefined,
+    commonQualifications: splitContent(fields.commonQualifications ?? ""),
+    process: splitContent(fields.process ?? ""),
+    applyMethod: splitContent(fields.applyMethod ?? ""),
+    notes: splitContent(fields.notes ?? ""),
+    contactName: fields.contactName?.trim() || undefined,
+    contactDept: fields.contactDept?.trim() || undefined,
+    contactPhone: fields.contactPhone?.trim() || undefined,
+    contactEmail: fields.contactEmail?.trim() || undefined,
   };
 }
 
@@ -204,6 +258,21 @@ export async function fetchJobPostingsFromGoogleSheet(
         "periodEnd",
         "status",
         "views",
+        "hireType",
+        "experience",
+        "education",
+        "field",
+        "duty",
+        "qualification",
+        "headcount",
+        "commonQualifications",
+        "process",
+        "applyMethod",
+        "notes",
+        "contactName",
+        "contactDept",
+        "contactPhone",
+        "contactEmail",
         "content",
       ];
 
