@@ -10,6 +10,7 @@ function itemImage(
   imageClass?: string,
   imageContainerClass?: string,
   imageBodyClass?: string,
+  unoptimized?: boolean,
 ) {
   return {
     src: `${ITEMS_BASE}/${filename}`,
@@ -18,6 +19,7 @@ function itemImage(
     imageClass,
     imageContainerClass,
     imageBodyClass,
+    unoptimized,
   };
 }
 
@@ -31,6 +33,7 @@ export const serviceItemImages: Record<
     imageClass?: string;
     imageContainerClass?: string;
     imageBodyClass?: string;
+    unoptimized?: boolean;
   }
 > = {
   // ── Piping Design ──
@@ -70,8 +73,10 @@ export const serviceItemImages: Record<
   "piping/Information Dwg. etc": itemImage(
     "piping-information-dwg.jpg",
     "Stress List — Line No·ISO Dwg No 등 Information Sheet",
-    "object-cover object-center",
-    "relative h-56 overflow-hidden bg-white sm:h-64",
+    "object-contain object-center",
+    "relative h-72 overflow-hidden bg-white sm:h-80",
+    undefined,
+    true,
   ),
 
   // ── Stress Analysis ──
@@ -116,31 +121,40 @@ export const serviceItemImages: Record<
   // ── 3D CAD ──
   "cad/S3D / E3D Admin": itemImage(
     "cad-s3d-admin.jpg",
-    "3D CAD Admin 및 Engineering Software",
+    "S3D / E3D Admin — 3D 모델·도면 검토 및 원격 협업",
+    "object-cover object-center",
   ),
   "cad/P&ID Check Admin.": itemImage(
     "cad-pid-admin.jpg",
-    "P&ID Check Admin — Support Drawing 및 설계 검토",
+    "P&ID Check Admin — SCODE Overlay·Line Color Check",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
   "cad/SPEC / CATA Management": itemImage(
     "cad-spec-cata.jpg",
-    "화학 플랜트 SPEC·CATA Database 관리",
+    "SPEC / CATA Management — Catalog·Component Parameter 설정",
+    "object-cover object-center",
+    "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
   "cad/Equip./Structure": itemImage(
     "cad-equip-structure.jpg",
-    "Equipment·Structure 3D Modeling",
+    "Equipment·Structure 3D Modeling — Vessel·Pipe Rack",
+    "object-cover object-center",
   ),
   "cad/Piping/Support": itemImage(
     "cad-piping-support.jpg",
     "Piping·Support 3D Modeling",
+    "object-cover object-center",
   ),
   "cad/Instrument & Elec.": itemImage(
     "cad-instrument-elec.jpg",
-    "Instrument·Electrical 3D Modeling",
+    "Instrument·Electrical 3D Modeling — Cable Tray",
+    "object-cover object-center",
   ),
   "cad/Duct/HVAC Etc.": itemImage(
     "cad-duct-hvac.jpg",
     "Duct·HVAC 3D Modeling",
+    "object-cover object-center",
   ),
   "cad/Clash Check": itemImage(
     "cad-clash-check.jpg",
@@ -175,31 +189,15 @@ export const serviceItemImages: Record<
   // ── Programming ──
   "programming/Customizing / Program Develop.": itemImage(
     "programming-customizing.jpg",
-    "Customizing 및 Program Development",
+    "Customizing / Program Develop.",
   ),
-  "programming/Design Automation": itemImage(
-    "programming-design-automation.jpg",
-    "Design Automation Workflow",
-  ),
-  "programming/Management Program": itemImage(
+  "programming/인사관리": itemImage(
     "programming-management.jpg",
-    "설계 진도 Management Program",
+    "인사관리 프로그램",
   ),
-  "programming/Trouble Shooting": itemImage(
-    "programming-trouble-shooting.jpg",
-    "Program Trouble Shooting",
-  ),
-  "programming/Performance Optimization": itemImage(
-    "programming-performance.jpg",
-    "Program Performance Optimization",
-  ),
-  "programming/3rd Party Program": itemImage(
-    "programming-3rd-party.jpg",
-    "3rd Party Program·ERP 연동",
-  ),
-  "programming/Data Exchange": itemImage(
-    "programming-data-exchange.jpg",
-    "Data Exchange 및 Format 변환",
+  "programming/경영관리": itemImage(
+    "programming-design-automation.jpg",
+    "경영관리 프로그램",
   ),
 };
 

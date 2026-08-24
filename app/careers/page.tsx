@@ -1,8 +1,12 @@
 import CareersBanner from "@/components/CareersBanner";
 import JobPostingTable from "@/components/JobPostingTable";
-import { jobPostings } from "@/data/careers";
+import { getJobPostings } from "@/lib/jobPostings";
 
-export default function CareersPage() {
+export const revalidate = 300;
+
+export default async function CareersPage() {
+  const postings = await getJobPostings();
+
   return (
     <main>
       <section className="page-hero">
@@ -24,7 +28,7 @@ export default function CareersPage() {
         </p>
 
         <div className="mt-6">
-          <JobPostingTable postings={jobPostings} />
+          <JobPostingTable postings={postings} />
         </div>
       </section>
     </main>

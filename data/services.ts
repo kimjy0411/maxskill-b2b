@@ -32,7 +32,7 @@ export const services: Service[] = [
     summary:
       "Planning · Basic Design · Detail Design — 배관 설계 전 공정 One-Stop 수행",
     intro: [
-      "맥스킬은 화공·발전·LNG 플랜트 프로젝트에서 배관 설계(Piping Design) 전 공정을 수행합니다. 숙련된 Piping Designer가 Project Scheduling·Coordination부터 Detail Design 도면까지 일관된 품질 기준으로 프로젝트를 지원합니다.",
+      "맥스킬은 화공·발전·LNG 플랜트 프로젝트에서 배관 설계(Piping Design) 전 공정을 수행합니다. Project Scheduling·Coordination부터 Detail Design 도면까지 일관된 품질 기준으로 프로젝트를 지원합니다.",
       "Planning 단계에서는 WBS·마일스톤 기반 일정 수립과 Mechanical, Instrument, Electrical, Civil 등 유관 공종 간 인터페이스를 조율합니다. Basic Design에서는 Plot Plan을 통해 배관 라우팅·설비 배치·공간 활용을 최적화하고, Detail Design에서는 3D Plan/ISO, Stress ISO, Support Detail, Information 도면까지 실무에 바로 적용 가능한 산출물을 제공합니다.",
       "국내외 대형 EPC 프로젝트에서 축적된 설계 경험을 바탕으로, 설계 변경·현장 대응·재작업을 최소화하는 실용적인 배관 설계 솔루션을 제공합니다.",
     ],
@@ -40,7 +40,7 @@ export const services: Service[] = [
       "Planning → Basic Design → Detail Design 단계별 체계적 수행",
       "3D Plan / ISO / Stress ISO / Support Detail 도면 일괄 제공",
       "화공·발전·LNG 분야 대형 프로젝트 다수 수행",
-      "숙련된 Piping Designer 전문 인력",
+      "다공종 Coordination 및 설계 변경 대응",
     ],
     sections: [
       {
@@ -101,7 +101,7 @@ export const services: Service[] = [
       },
     ],
     image: serviceBanner("piping.jpg"),
-    imageAlt: "화학 플랜트 배관·설비 전경",
+    imageAlt: "Piping Design — P&ID SCODE Overlay·Line Color Check",
   },
   {
     id: "stress",
@@ -109,7 +109,7 @@ export const services: Service[] = [
     summary:
       "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석 전문",
     intro: [
-      "맥스킬 Stress Analysis 팀은 고경력의 Stress Engineer가 Thermal Analysis, Special Support 설계, Trouble Shooting을 수행합니다. CAESAR II 등 업계 표준 해석 도구를 활용하여 배관 관련 안전성·신뢰성을 검증합니다.",
+      "맥스킬 Stress Analysis 팀은 Thermal Analysis, Special Support 설계, Trouble Shooting을 수행합니다. CAESAR II 등 업계 표준 해석 도구를 활용하여 배관 관련 안전성·신뢰성을 검증합니다.",
       "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대해서도 신속한 해석·대안 제시가 가능합니다. Piping Design과 유기적으로 연계되어 Stress ISO 도면까지 일관된 품질로 제공합니다.",
       "국내외 화공·발전·LNG 프로젝트에서 High Temperature·High Pressure 배관, Critical Line에 대한 해석 경험을 보유하고 있으며, Owner·EPC·Contractor 요구 Specification에 맞춘 해석 보고서를 작성합니다.",
     ],
@@ -117,7 +117,7 @@ export const services: Service[] = [
       "Thermal·Sustained·Occasional Load Case 종합 검토",
       "Special Support·Spring Hanger·Expansion Joint 설계",
       "현장 Trouble Shooting 및 긴급 해석 대응",
-      "고경력 Stress Engineer 전문 인력",
+      "CAESAR II 기반 Stress 해석 및 보고서 작성",
     ],
     sections: [
       {
@@ -178,23 +178,22 @@ export const services: Service[] = [
       },
     ],
     image: serviceBanner("stress.jpg"),
-    imageAlt: "정유·화학 플랜트 설비",
+    imageAlt: "Stress Analysis — SIGMA 3D Pipe Stress·Thermal 해석",
   },
   {
     id: "cad",
     title: "3D CAD",
     summary:
-      "S3D·E3D·SP3D 기반 3D Modeling, Review, Clash Check 및 Plant Imaging",
+      "S3D·E3D·SP3D 기반 3D Modeling, Model Review, Clash Check",
     intro: [
-      "맥스킬 3D CAD 팀은 Smart 3D(S3D), E3D, PDS/PDMS, SP3D 등 주요 3D CAD 플랫폼에서 Admin, Modeling, Model Review, Clash Check 업무를 수행합니다. 평균 15.2년 경력의 3D Admin 5명이 SPEC/CATA 관리와 프로젝트 3D 환경 구축을 담당합니다.",
-      "Equipment/Structure, Piping/Support, Instrument & Electrical, Duct/HVAC 등 전 공종 3D 모델링과 Clash Check, 3D Product Line Check, Maintenance·Operability·Safety(MOS) Review, P&ID Check를 통해 설계 품질을 사전에 검증합니다.",
-      "3D Animation & Plant Imaging, BOM·ISO 도면 자동 생성 Management Program, 3rd Party Program 연동까지 지원하여 설계-시공-운영 전 단계에서 3D 모델의 활용도를 극대화합니다.",
+      "맥스킬 3D CAD 팀은 Smart 3D(S3D), E3D, PDS/PDMS, SP3D 등 주요 3D CAD 플랫폼에서 Admin, Modeling, Model Review, Clash Check 업무를 수행합니다. SPEC/CATA 관리와 프로젝트 3D 환경 구축을 담당합니다.",
+      "Equipment/Structure, Piping/Support, Instrument & Electrical, Duct/HVAC 등 전 공종 3D 모델링과 Clash Check를 통해 설계 품질을 사전에 검증합니다.",
+      "Navisworks 등 3D 3rd Party Program 연동으로 Multi-discipline 모델을 통합 리뷰하고, 설계 이슈를 Tracking합니다.",
     ],
     highlights: [
       "S3D / E3D / PDS·PDMS / SP3D 다중 플랫폼 운영",
       "전 공종 3D Modeling 및 Multi-discipline Clash Check",
-      "MOS·P&ID·Product Line Check 등 Model Review",
-      "3D Animation · Plant Imaging · BOM/ISO 자동화",
+      "3D 3rd Party Program 연동 (Navisworks 등)",
     ],
     sections: [
       {
@@ -249,7 +248,7 @@ export const services: Service[] = [
       {
         title: "Model Review",
         description:
-          "3D 모델 기반 설계 검토를 통해 Clash, 시공성, 운전·정비 접근성, P&ID 정합성을 확인합니다.",
+          "3D 모델 간섭 검토와 외부 프로그램 연동을 통해 설계 품질을 확인합니다.",
         items: [
           {
             name: "Clash Check",
@@ -257,131 +256,64 @@ export const services: Service[] = [
               "Hard Clash, Soft Clash, Clearance Check 등 Multi-discipline 간섭 검토. Clash Report 작성 및 Design Resolution Tracking.",
           },
           {
-            name: "3D Product Line Check",
-            description:
-              "Line-by-line 3D 모델 완성도 검토. Missing Component, Wrong Spec, Routing Error 식별.",
-          },
-          {
-            name: "Maintenance, Operability, Safety Check",
-            description:
-              "Valve Access, Instrument Access, Lifting Route, Escape Route, Maintenance Space 등 MOS Review.",
-          },
-          {
-            name: "P&ID Check",
-            description:
-              "P&ID 대비 3D 모델 정합성 검토. Line, Valve, Instrument, Equipment Tag 일치 여부 확인.",
-          },
-        ],
-      },
-      {
-        title: "Visualization & Output",
-        description:
-          "3D 모델을 활용한 시각화 및 설계 산출물 자동화를 지원합니다.",
-        items: [
-          {
-            name: "3D Animation & Plant Imaging",
-            description:
-              "공정 흐름, Maintenance Scenario, Safety Training용 3D Animation 및 Plant Walk-through 영상 제작.",
-          },
-          {
-            name: "Management Program, BOM, ISO DWG.",
-            description:
-              "Material Take-off, BOM, ISO/Plan 도면 자동 생성 Management Program 운영. Custom Report, Weight/CG Report, Progress Report.",
-          },
-        ],
-      },
-      {
-        title: "Integration",
-        description:
-          "타 시스템·프로그램과의 연동을 통해 3D 데이터 활용 범위를 확장합니다.",
-        items: [
-          {
             name: "3D 3rd Party Program",
             description:
-              "Navisworks, Revit, ERP, Document Management System 등 외부 프로그램과 3D Model·Attribute 연동. API 기반 Custom Interface 개발.",
+              "Navisworks 등 외부 프로그램으로 3D 모델을 통합 리뷰합니다. Multi-discipline 모델 취합, Clash·Walk-through 검토, 설계 이슈 Tracking을 지원합니다.",
           },
         ],
       },
     ],
     image: serviceBanner("cad.jpg"),
-    imageAlt: "엔지니어들이 컴퓨터에서 설계 도면을 검토하는 모습",
+    imageAlt: "3D CAD Clash Check — 배관·구조 간섭 검토",
   },
   {
     id: "programming",
     title: "Programming",
     summary:
-      "Customizing · Program Development · 3rd Party 연동 — 설계 생산성 자동화",
+      "Customizing · Management — 맞춤형 프로그램 개발",
     intro: [
-      "맥스킬 Programming 서비스는 플랜트 설계·시공·운영 현장의 반복 업무를 자동화하고, 3D CAD·Piping Design·Stress Analysis 업무와 연계되는 맞춤형 프로그램을 개발합니다.",
-      "P&ID Check, BOM·ISO 도면 자동 생성, Management Program, 3D 3rd Party Program 연동 등 실무에서 즉시 활용 가능한 솔루션을 제공하며, 기존 Commercial Software의 Customizing과 신규 Program Development, Trouble Shooting까지 One-Stop으로 지원합니다.",
-      "프로젝트별 Workflow·Specification·산출물 형식에 맞춘 프로그램을 개발하여 설계 오류를 줄이고, M/H 절감과 납기 단축에 기여합니다. 축적된 설계 프로젝트 경험을 바탕으로 현장 요구에 부합하는 실용적인 프로그램을 제공합니다.",
+      "맥스킬 Programming은 설계 소프트웨어 맞춤 개발과 함께, 인사·경영 업무를 지원하는 Management 프로그램을 개발합니다.",
+      "Customizing / Program Develop.에서는 S3D, E3D, PDMS, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 설계 자동화 Workflow를 제공합니다.",
+      "Management 프로그램은 인사 운영과 프로젝트·경영 현황을 실무에 맞게 관리할 수 있도록 지원합니다.",
     ],
     highlights: [
-      "3D CAD·Piping·Stress 업무 연계 맞춤 개발",
-      "BOM / ISO / Report 자동화 Program",
-      "Commercial Software Customizing",
-      "3rd Party Program·ERP·DMS 연동",
+      "Customizing / Program Develop.",
+      "Management — 인사관리",
+      "Management — 경영관리",
     ],
     sections: [
       {
-        title: "Customizing / Program Develop.",
+        title: "Program Development",
         description:
-          "기존 설계 소프트웨어 및 사내 업무 프로세스에 맞춘 프로그램을 개발·커스터마이징합니다.",
+          "기존 설계 소프트웨어와 프로젝트 프로세스에 맞춘 프로그램을 개발·커스터마이징합니다.",
         items: [
           {
             name: "Customizing / Program Develop.",
             description:
-              "S3D, E3D, PDMS, AutoCAD, Excel/VBA 등 플랫폼 기반 Custom Macro, Report, Interface 개발. 프로젝트 Standard·Template·Check List 자동화.",
-          },
-          {
-            name: "Design Automation",
-            description:
-              "Line List → 3D Model → ISO/BOM 자동 생성 Workflow. P&ID Tag Check, Spec Validation, Duplicate Line Check 자동화.",
-          },
-          {
-            name: "Management Program",
-            description:
-              "설계 진도·공정·M/H 관리, Drawing Status Tracking, Transmittal Management, Revision Control 프로그램 개발.",
+              "S3D, E3D, PDMS, AutoCAD, Excel/VBA 등 플랫폼 기반 Custom Macro, Report, Interface 개발. 프로젝트 Standard·Template·Check List 자동화와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 지원합니다.",
           },
         ],
       },
       {
-        title: "Trouble Shooting",
+        title: "Management",
         description:
-          "기존 프로그램·인터페이스의 오류 수정 및 성능 개선을 지원합니다.",
+          "인사 운영과 경영 현황을 관리할 수 있는 프로그램을 개발합니다.",
         items: [
           {
-            name: "Trouble Shooting",
+            name: "인사관리",
             description:
-              "Program Bug Fix, Data Migration Error, Report Format Issue, API 연동 오류 등 긴급·반복 이슈 해결. Legacy Program 유지보수.",
+              "인력 현황, 근태, 평가, 조직 정보 등 인사 운영에 필요한 기능을 프로젝트·회사 프로세스에 맞춰 구성합니다.",
           },
           {
-            name: "Performance Optimization",
+            name: "경영관리",
             description:
-              "대용량 3D Model·Database 처리 속도 개선, Batch Process 최적화, Server/Client 환경 튜닝.",
-          },
-        ],
-      },
-      {
-        title: "3rd Party Program",
-        description:
-          "외부 시스템과의 연동을 통해 설계 데이터의 활용 범위를 확장합니다.",
-        items: [
-          {
-            name: "3rd Party Program",
-            description:
-              "ERP, SAP, Document Management, PM Tool, Navisworks, Power BI 등 외부 시스템과 설계 데이터 연동. Open API·Database Interface 개발.",
-          },
-          {
-            name: "Data Exchange",
-            description:
-              "IFC, STEP, PCF, IDF, CSV/XML 등 표준·비표준 Format 간 데이터 변환 프로그램. Vendor Data → 3D Model 자동 반영.",
+              "설계 진도, 공정, M/H, 원가·실적 등 경영 관리 지표를 추적하고, Drawing Status·Transmittal·Revision 현황을 한눈에 볼 수 있도록 지원합니다.",
           },
         ],
       },
     ],
     image: serviceBanner("programming.jpg"),
-    imageAlt: "설계 자동화 Programming",
+    imageAlt: "Programming — Customizing · Management",
   },
 ];
 

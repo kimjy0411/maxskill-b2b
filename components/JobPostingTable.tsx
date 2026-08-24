@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { JobPosting } from "@/data/careers";
 
 interface JobPostingTableProps {
@@ -5,6 +6,14 @@ interface JobPostingTableProps {
 }
 
 export default function JobPostingTable({ postings }: JobPostingTableProps) {
+  if (postings.length === 0) {
+    return (
+      <div className="rounded-2xl border border-white/10 bg-brand-card px-6 py-16 text-center text-sm text-gray-400">
+        현재 등록된 채용 공고가 없습니다.
+      </div>
+    );
+  }
+
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
       <div className="overflow-x-auto">
@@ -38,8 +47,13 @@ export default function JobPostingTable({ postings }: JobPostingTableProps) {
                 <td className="whitespace-nowrap px-5 py-4 text-sm text-gray-300 sm:px-6">
                   {posting.postedAt}
                 </td>
-                <td className="px-5 py-4 text-sm font-semibold text-white sm:px-6">
-                  {posting.title}
+                <td className="px-5 py-4 text-sm font-semibold sm:px-6">
+                  <Link
+                    href={`/careers/${posting.id}`}
+                    className="text-white underline-offset-4 hover:text-brand-blue hover:underline"
+                  >
+                    {posting.title}
+                  </Link>
                 </td>
                 <td className="whitespace-nowrap px-5 py-4 text-sm text-gray-300 sm:px-6">
                   {posting.period}

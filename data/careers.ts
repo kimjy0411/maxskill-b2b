@@ -74,8 +74,10 @@ export interface JobPosting {
   postedAt: string;
   title: string;
   period: string;
+  periodEnd?: string;
   status: JobPostingStatus;
   views: number;
+  content: string[];
 }
 
 export const jobPostings: JobPosting[] = [
@@ -84,23 +86,42 @@ export const jobPostings: JobPosting[] = [
     postedAt: "2026-03-08",
     title: "배관설계",
     period: "2026.03.08 ~ 2026.12.18",
+    periodEnd: "2026-12-18",
     status: "진행중",
     views: 4417,
+    content: [
+      "화공·발전·LNG 플랜트 프로젝트의 배관 설계(Piping Design) 업무를 수행할 인재를 모집합니다.",
+      "Planning부터 Detail Design까지 배관 설계 전 공정을 경험할 수 있으며, Plot Plan, ISO, Stress ISO, Support Detail 도면 작성 및 유관 공종 Coordination 업무를 담당합니다.",
+      "지원 자격: 배관 설계 유경험자. AutoCAD, 3D CAD(S3D/E3D/PDMS) 사용 가능자 우대.",
+      "접수 방법: 아래 이메일로 이력서와 경력기술서를 보내 주시기 바랍니다.",
+    ],
   },
   {
     id: 2,
     postedAt: "2026-03-02",
     title: "3D Model 경력 사원 모집 공고",
     period: "2026.03.02 ~ 2026.12.30",
+    periodEnd: "2026-12-30",
     status: "진행중",
     views: 88,
+    content: [
+      "S3D, E3D, PDS/PDMS, SP3D 등 3D CAD 플랫폼에서 Modeling 및 Model Review를 수행할 경력 사원을 모집합니다.",
+      "Equipment/Structure, Piping/Support 등 전 공종 3D 모델링과 Clash Check, 3D 3rd Party Program(Navisworks 등) 연동 리뷰 업무를 담당합니다.",
+      "지원 자격: 3D Plant Modeling 경력자. S3D/E3D Admin 또는 Clash Check 경험자 우대.",
+      "접수 방법: 아래 이메일로 이력서와 경력기술서를 보내 주시기 바랍니다.",
+    ],
   },
   {
     id: 3,
     postedAt: "2005-03-26",
     title: "국내 대기업 플랜트 엔지니어링 건축 설계부문",
     period: "2005.03.25 ~ 2005.04.10",
-    status: "진행중",
+    periodEnd: "2005-04-10",
+    status: "마감",
     views: 3381,
+    content: [
+      "국내 대기업 플랜트 엔지니어링 건축 설계부문 채용 공고입니다.",
+      "본 공고는 접수기간이 종료되어 마감되었습니다.",
+    ],
   },
 ];

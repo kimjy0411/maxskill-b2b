@@ -16,7 +16,7 @@ export default function ServiceDetail({
       id={sectionId}
       className="scroll-mt-28 overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card sm:scroll-mt-32"
     >
-      <div className="relative h-72 overflow-hidden sm:h-96">
+      <div className="relative h-72 overflow-hidden border-b border-white/10 sm:h-96">
         <Image
           src={service.image}
           alt={service.imageAlt}
@@ -25,7 +25,6 @@ export default function ServiceDetail({
           sizes="(max-width: 768px) 100vw, 1024px"
           priority={sectionId === "piping"}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/30 to-transparent" />
       </div>
 
       <div className="p-8 sm:p-10 lg:p-12">
@@ -96,12 +95,14 @@ export default function ServiceDetail({
                               itemImage.imageClass ?? "object-cover object-center"
                             }
                             sizes="(max-width: 1024px) 100vw, 512px"
+                            quality={95}
+                            unoptimized={itemImage.unoptimized}
                           />
                         </div>
                       )}
                       <div
                         className={
-                          itemImage.imageBodyClass ??
+                          itemImage?.imageBodyClass ??
                           "px-4 pb-5 pt-3 sm:px-5 sm:pb-6 sm:pt-4"
                         }
                       >
