@@ -32,15 +32,16 @@ export default function AboutPage() {
           role="img"
           aria-label="대표이사"
         />
-        <div className="absolute inset-0 bg-brand-blue/80" />
 
         <div className="section-container relative z-10 min-h-[600px] sm:min-h-[680px]">
           <div className="absolute left-1/2 top-[62%] w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-4 text-center sm:top-[60%]">
-            <p className="page-subtitle text-white/70">Vision</p>
-            <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+            <p className="page-subtitle text-white/85 drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]">
+              Vision
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] sm:text-4xl">
               {companyInfo.vision}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/80">
+            <p className="mx-auto mt-4 max-w-xl text-white/90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]">
               고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
             </p>
           </div>

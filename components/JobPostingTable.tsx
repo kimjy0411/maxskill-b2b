@@ -21,7 +21,7 @@ export default function JobPostingTable({ postings }: JobPostingTableProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[800px] border-collapse">
+        <table className="w-full min-w-[720px] border-collapse">
           <thead>
             <tr className="border-b border-white/10">
               {[
@@ -30,7 +30,6 @@ export default function JobPostingTable({ postings }: JobPostingTableProps) {
                 { label: "채용명", accent: "text-brand-tan" },
                 { label: "접수기간", accent: "text-brand-blue" },
                 { label: "상태", accent: "text-brand-blue" },
-                { label: "조회", accent: "text-brand-blue" },
               ].map((col) => (
                 <th
                   key={col.label}
@@ -78,9 +77,6 @@ export default function JobPostingTable({ postings }: JobPostingTableProps) {
                   >
                     {posting.status}
                   </span>
-                </td>
-                <td className="whitespace-nowrap px-5 py-4 text-sm text-gray-300 sm:px-6">
-                  {posting.views.toLocaleString()}
                 </td>
               </tr>
             ))}

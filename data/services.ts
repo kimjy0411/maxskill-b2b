@@ -273,7 +273,7 @@ export const services: Service[] = [
       "Customizing · Management — 맞춤형 프로그램 개발",
     intro: [
       "맥스킬 Programming은 설계 소프트웨어 맞춤 개발과 함께, 인사·경영 업무를 지원하는 Management 프로그램을 개발합니다.",
-      "Customizing / Program Develop.에서는 S3D, E3D, PDMS, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 설계 자동화 Workflow를 제공합니다.",
+      "Customizing / Program Develop.에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
       "Management 프로그램은 인사 운영과 프로젝트·경영 현황을 실무에 맞게 관리할 수 있도록 지원합니다.",
     ],
     highlights: [
@@ -290,7 +290,7 @@ export const services: Service[] = [
           {
             name: "Customizing / Program Develop.",
             description:
-              "S3D, E3D, PDMS, AutoCAD, Excel/VBA 등 플랫폼 기반 Custom Macro, Report, Interface 개발. 프로젝트 Standard·Template·Check List 자동화와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 지원합니다.",
+              "S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼 기반 Custom Macro, Report, Interface 개발. 프로젝트 Standard·Template·Check List 자동화와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 지원합니다.",
           },
         ],
       },

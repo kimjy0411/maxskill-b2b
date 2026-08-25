@@ -188,8 +188,12 @@ export const serviceItemImages: Record<
 
   // ── Programming ──
   "programming/Customizing / Program Develop.": itemImage(
-    "programming-customizing.jpg",
-    "Customizing / Program Develop.",
+    "programming-customizing.png",
+    "Customizing / Program Develop. — S3D · E3D · AutoCAD · Excel/VBA Auto Generation Workflow",
+    "object-contain object-center",
+    "relative aspect-[3/2] overflow-hidden bg-[#1a1d22]",
+    undefined,
+    true,
   ),
   "programming/인사관리": itemImage(
     "programming-management.jpg",

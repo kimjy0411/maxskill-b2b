@@ -77,7 +77,6 @@ export interface JobPosting {
   periodStart?: string;
   periodEnd?: string;
   status: JobPostingStatus;
-  views: number;
   content: string[];
   hireType?: string;
   experience?: string;

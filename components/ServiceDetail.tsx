@@ -16,12 +16,22 @@ export default function ServiceDetail({
       id={sectionId}
       className="scroll-mt-28 overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card sm:scroll-mt-32"
     >
-      <div className="relative h-72 overflow-hidden border-b border-white/10 sm:h-96">
+      <div
+        className={`relative overflow-hidden border-b border-white/10 ${
+          service.id === "programming"
+            ? "aspect-[16/9] bg-brand-dark"
+            : "h-72 sm:h-96"
+        }`}
+      >
         <Image
           src={service.image}
           alt={service.imageAlt}
           fill
-          className="object-cover"
+          className={
+            service.id === "programming"
+              ? "object-contain object-center"
+              : "object-cover"
+          }
           sizes="(max-width: 768px) 100vw, 1024px"
           priority={sectionId === "piping"}
         />
@@ -68,7 +78,11 @@ export default function ServiceDetail({
                 {section.description}
               </p>
 
-              <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-2">
+              <div
+                className={`mt-6 grid grid-cols-1 gap-5 ${
+                  section.items.length === 1 ? "" : "lg:grid-cols-2"
+                }`}
+              >
                 {section.items.map((item) => {
                   const itemImage = getServiceItemImage(
                     service.id,
@@ -87,17 +101,27 @@ export default function ServiceDetail({
                             "relative h-56 overflow-hidden bg-brand-dark sm:h-64"
                           }
                         >
-                          <Image
-                            src={itemImage.src}
-                            alt={itemImage.alt}
-                            fill
-                            className={
-                              itemImage.imageClass ?? "object-cover object-center"
-                            }
-                            sizes="(max-width: 1024px) 100vw, 512px"
-                            quality={95}
-                            unoptimized={itemImage.unoptimized}
-                          />
+                          {itemImage.unoptimized ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={itemImage.src}
+                              alt={itemImage.alt}
+                              className={`h-full w-full ${
+                                itemImage.imageClass ?? "object-cover object-center"
+                              }`}
+                            />
+                          ) : (
+                            <Image
+                              src={itemImage.src}
+                              alt={itemImage.alt}
+                              fill
+                              className={
+                                itemImage.imageClass ?? "object-cover object-center"
+                              }
+                              sizes="(max-width: 1024px) 100vw, 512px"
+                              quality={95}
+                            />
+                          )}
                         </div>
                       )}
                       <div

@@ -13,8 +13,6 @@ const HEADER_ALIASES: Record<string, keyof RowFields> = {
   period: "period",
   상태: "status",
   status: "status",
-  조회: "views",
-  views: "views",
   내용: "content",
   content: "content",
   채용구분: "hireType",
@@ -51,7 +49,6 @@ interface RowFields {
   periodEnd: string;
   period: string;
   status: string;
-  views: string;
   content: string;
   hireType: string;
   experience: string;
@@ -211,7 +208,6 @@ function mapRow(
     period,
     periodEnd: periodEnd ? normalizeDate(periodEnd) : undefined,
     status: resolveJobStatus(fields.status, periodEnd),
-    views: Number.parseInt(fields.views ?? "0", 10) || 0,
     content: splitContent(fields.content ?? ""),
     hireType: fields.hireType?.trim() || undefined,
     experience: fields.experience?.trim() || undefined,
@@ -257,7 +253,7 @@ export async function fetchJobPostingsFromGoogleSheet(
         "periodStart",
         "periodEnd",
         "status",
-        "views",
+        null,
         "hireType",
         "experience",
         "education",

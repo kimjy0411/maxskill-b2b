@@ -27,8 +27,3 @@ export async function readLocalJobPostings(): Promise<JobPosting[]> {
     return getFallbackJobPostings();
   }
 }
-
-export async function writeLocalJobPostings(postings: JobPosting[]) {
-  const normalized = postings.slice().sort((a, b) => a.id - b.id);
-  await fs.writeFile(BOARD_PATH, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
-}

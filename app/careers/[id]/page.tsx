@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CareersBanner from "@/components/CareersBanner";
 import JobPostingNotice from "@/components/JobPostingNotice";
-import JobPostingViewTracker from "@/components/JobPostingViewTracker";
 import { companyInfo } from "@/data/company";
 import { getAdjacentJobPostings, getJobPosting, getJobPostings } from "@/lib/jobPostings";
 
@@ -57,11 +56,10 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
       </section>
 
       <section className="section-container py-16 sm:py-20">
-        <JobPostingViewTracker id={posting.id} />
         <CareersBanner />
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-brand-card sm:mt-12">
-          <dl className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-3">
             <div className="bg-brand-card px-6 py-5">
               <dt className="text-sm font-bold text-brand-blue">공고일자</dt>
               <dd className="mt-2 text-sm text-gray-200">{posting.postedAt}</dd>
@@ -82,12 +80,6 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
                 >
                   {posting.status}
                 </span>
-              </dd>
-            </div>
-            <div className="bg-brand-card px-6 py-5">
-              <dt className="text-sm font-bold text-brand-blue">조회</dt>
-              <dd className="mt-2 text-sm text-gray-200">
-                {posting.views.toLocaleString()}
               </dd>
             </div>
           </dl>
