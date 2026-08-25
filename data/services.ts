@@ -101,7 +101,7 @@ export const services: Service[] = [
       },
     ],
     image: serviceBanner("piping.jpg"),
-    imageAlt: "Piping Design — P&ID SCODE Overlay·Line Color Check",
+    imageAlt: "Piping Design — P&ID 배관 상세 도면",
   },
   {
     id: "stress",

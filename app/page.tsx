@@ -32,6 +32,7 @@ export default async function HomePage() {
               items={getServiceCardItems(service)}
               image={service.image}
               imageAlt={service.imageAlt}
+              imageContain={service.id === "piping"}
             />
           ))}
         </div>

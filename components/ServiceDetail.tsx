@@ -18,7 +18,7 @@ export default function ServiceDetail({
     >
       <div
         className={`relative overflow-hidden border-b border-white/10 ${
-          service.id === "programming"
+          service.id === "programming" || service.id === "piping"
             ? "aspect-[16/9] bg-brand-dark"
             : "h-72 sm:h-96"
         }`}
@@ -28,7 +28,7 @@ export default function ServiceDetail({
           alt={service.imageAlt}
           fill
           className={
-            service.id === "programming"
+            service.id === "programming" || service.id === "piping"
               ? "object-contain object-center"
               : "object-cover"
           }

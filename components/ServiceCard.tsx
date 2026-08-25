@@ -6,6 +6,7 @@ interface ServiceCardProps {
   items: string[];
   image: string;
   imageAlt: string;
+  imageContain?: boolean;
 }
 
 export default function ServiceCard({
@@ -14,15 +15,20 @@ export default function ServiceCard({
   items,
   image,
   imageAlt,
+  imageContain = false,
 }: ServiceCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card transition-colors hover:border-brand-blue/30">
-      <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10">
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-brand-dark">
         <Image
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className={
+            imageContain
+              ? "object-contain object-center"
+              : "object-cover transition-transform duration-700 group-hover:scale-105"
+          }
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
