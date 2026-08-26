@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="relative h-[260px] w-[42%] min-w-[220px] max-w-[560px] shrink-0 overflow-hidden sm:h-[300px] lg:h-[340px]">
             <Image
               src="/images/about/ceo.png"
-              alt="대표이사"
+              alt={`${companyInfo.ceoTitle} ${companyInfo.ceoName}`}
               fill
               quality={95}
               className="origin-[52%_42%] scale-[1.45] object-cover object-[52%_42%]"
@@ -46,6 +46,19 @@ export default function AboutPage() {
               <p className="mt-3 whitespace-nowrap break-keep text-sm text-gray-300 sm:text-base">
                 고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
               </p>
+              <div className="mt-6 flex flex-col items-center">
+                <Image
+                  src="/images/about/ceo-signature.png"
+                  alt={`${companyInfo.ceoName} 서명`}
+                  width={200}
+                  height={46}
+                  unoptimized
+                  className="h-10 w-auto sm:h-11"
+                />
+                <p className="mt-2 text-sm font-medium text-gray-200 sm:text-base">
+                  {companyInfo.ceoTitle} {companyInfo.ceoName}
+                </p>
+              </div>
             </div>
           </div>
         </div>

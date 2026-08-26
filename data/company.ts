@@ -8,6 +8,8 @@ export const companyInfo = {
   address: "서울특별시 성동구 성수이로 66 서울숲드림타워 703호",
   vision:
     'Be a "Good Company" through Customer\'s Satisfaction',
+  ceoName: "김석기",
+  ceoTitle: "대표이사",
   description:
     "화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD, 설계 IT 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.",
 };
