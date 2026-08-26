@@ -1,8 +1,5 @@
-import {
-  resumeTemplateDownloadName,
-  resumeTemplateHref,
-  type JobPosting,
-} from "@/data/careers";
+import type { JobPosting } from "@/data/careers";
+import ResumeTemplateDownload from "@/components/ResumeTemplateDownload";
 
 function InfoTable({
   rows,
@@ -55,30 +52,6 @@ function OutlineSection({
   );
 }
 
-function ResumeTemplateDownload({
-  bordered = false,
-}: {
-  bordered?: boolean;
-}) {
-  return (
-    <div
-      className={
-        bordered
-          ? "border-t border-dashed border-white/15 py-5 last:pb-0"
-          : "rounded-2xl border border-white/10 px-5 py-6 sm:px-7"
-      }
-    >
-      <p className="font-bold text-white">▣ 이력서 양식 다운로드</p>
-      <a
-        href={resumeTemplateHref}
-        download={resumeTemplateDownloadName}
-        className="mt-3 inline-flex text-sm font-semibold text-brand-blue hover:underline"
-      >
-        이력서 양식 다운로드
-      </a>
-    </div>
-  );
-}
 export default function JobPostingNotice({ posting }: { posting: JobPosting }) {
   const hasNotice =
     posting.hireType ||
