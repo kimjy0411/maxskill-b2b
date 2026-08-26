@@ -5,18 +5,6 @@ import { useEffect, useState } from "react";
 import { HeroBackgroundSlides } from "@/components/HeroBackgroundSlides";
 import { heroSlides, HERO_SLIDE_INTERVAL_MS } from "@/data/heroSlides";
 
-function HeroDescription() {
-  return (
-    <p className="max-w-3xl break-keep text-base leading-8 text-gray-100 sm:text-lg sm:leading-9 [text-shadow:0_2px_16px_rgba(0,0,0,0.65)]">
-      <span className="font-semibold text-brand-blue">화공</span>,{" "}
-      <span className="font-semibold text-brand-blue">발전</span>,{" "}
-      <span className="font-semibold text-brand-blue">LNG</span> 분야 플랜트
-      엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD,
-      설계 IT 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.
-    </p>
-  );
-}
-
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -42,10 +30,6 @@ export default function HeroSection() {
             플랜트 엔지니어링의{" "}
             <span className="text-brand-blue">미래</span>를 설계합니다
           </h1>
-
-          <div className="mt-6">
-            <HeroDescription />
-          </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
             <Link
