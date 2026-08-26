@@ -1,4 +1,3 @@
-import EmailActionButton from "@/components/EmailActionButton";
 import { companyInfo } from "@/data/company";
 
 export default function ContactPage() {
@@ -40,14 +39,6 @@ export default function ContactPage() {
                 <p className="text-sm font-medium text-gray-400">Website</p>
                 <p className="mt-1 text-brand-blue">{companyInfo.website}</p>
               </div>
-            </div>
-
-            <div className="mt-10">
-              <EmailActionButton
-                email={companyInfo.email}
-                label="이메일 보내기"
-                variant="outline"
-              />
             </div>
           </div>
         </div>

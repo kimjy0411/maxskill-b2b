@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CareersBanner from "@/components/CareersBanner";
-import EmailActionButton from "@/components/EmailActionButton";
 import JobPostingNotice from "@/components/JobPostingNotice";
-import { companyInfo } from "@/data/company";
 import { getAdjacentJobPostings, getJobPosting, getJobPostings } from "@/lib/jobPostings";
 
 export const revalidate = 300;
@@ -37,9 +35,6 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
   ]);
   if (!posting) notFound();
   const { previous, next } = getAdjacentJobPostings(postings, posting.id);
-
-  const applyEmail = posting.contactEmail || companyInfo.email;
-  const applySubject = `[채용지원] ${posting.title}`;
 
   return (
     <main>
@@ -88,27 +83,12 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
           <JobPostingNotice posting={posting} />
 
           <div className="pt-4">
-            {posting.status === "진행중" ? (
-              <EmailActionButton
-                email={applyEmail}
-                subject={applySubject}
-                label="이메일로 지원하기"
-              >
-                <Link
-                  href="/careers"
-                  className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
-                >
-                  목록으로
-                </Link>
-              </EmailActionButton>
-            ) : (
-              <Link
-                href="/careers"
-                className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
-              >
-                목록으로
-              </Link>
-            )}
+            <Link
+              href="/careers"
+              className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
+            >
+              목록으로
+            </Link>
           </div>
         </article>
 
