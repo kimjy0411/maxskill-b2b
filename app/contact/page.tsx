@@ -1,8 +1,8 @@
-import OfficeMap from "@/components/OfficeMap";
 import { companyInfo } from "@/data/company";
 
 const mapQuery = "서울특별시 성동구 성수이로 66 서울숲드림타워";
-const kakaoMapLink = `https://map.kakao.com/link/search/${encodeURIComponent(mapQuery)}`;
+const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&hl=ko&z=16&output=embed`;
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
 
 export default function ContactPage() {
   return (
@@ -52,15 +52,21 @@ export default function ContactPage() {
               {companyInfo.address}
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
-              <OfficeMap kakaoAppKey={process.env.NEXT_PUBLIC_KAKAO_MAP_APP_KEY} />
+              <iframe
+                title="맥스킬 오시는 길"
+                src={mapEmbedSrc}
+                className="h-[280px] w-full sm:h-[360px] lg:h-[400px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <a
-              href={kakaoMapLink}
+              href={mapLink}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex text-sm font-semibold text-brand-blue hover:underline"
             >
-              카카오맵에서 크게 보기
+              구글 지도에서 크게 보기
             </a>
           </div>
         </div>
