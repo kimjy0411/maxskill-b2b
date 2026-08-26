@@ -25,12 +25,12 @@ export default function AboutPage() {
       {/* Vision */}
       <section className="overflow-hidden bg-brand-dark">
         <div className="flex items-stretch">
-          <div className="relative h-[180px] w-[160px] shrink-0 sm:h-[210px] sm:w-[200px] lg:h-[230px] lg:w-[240px]">
+          <div className="relative h-[180px] w-[160px] shrink-0 overflow-hidden sm:h-[210px] sm:w-[200px] lg:h-[230px] lg:w-[240px]">
             <Image
               src="/images/about/ceo.png"
               alt="대표이사"
               fill
-              className="object-cover object-[52%_18%]"
+              className="origin-[52%_20%] scale-[2.4] object-cover object-[52%_20%]"
               sizes="240px"
               priority
             />
