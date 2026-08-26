@@ -66,7 +66,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="mt-4 inline-flex text-sm font-semibold text-brand-blue hover:underline"
             >
-              구글 지도에서 크게 보기
+              크게 보기
             </a>
           </div>
         </div>
