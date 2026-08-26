@@ -36,13 +36,13 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="flex flex-1 items-center px-5 py-5 sm:px-8 lg:px-12">
-            <div className="max-w-2xl">
+          <div className="flex min-w-0 flex-1 items-center px-5 py-5 sm:px-8 lg:px-12">
+            <div>
               <p className="page-subtitle">Vision</p>
-              <h2 className="mt-2 text-lg font-bold leading-snug text-white sm:mt-3 sm:text-2xl lg:text-3xl">
+              <h2 className="mt-2 whitespace-nowrap text-[clamp(0.8rem,2.15vw,1.75rem)] font-bold text-white sm:mt-3">
                 {companyInfo.vision}
               </h2>
-              <p className="mt-2 break-keep text-sm text-gray-300 sm:mt-3 sm:text-base">
+              <p className="mt-2 whitespace-nowrap break-keep text-sm text-gray-300 sm:mt-3 sm:text-base">
                 고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
               </p>
             </div>
