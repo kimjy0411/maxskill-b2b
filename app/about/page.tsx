@@ -25,24 +25,25 @@ export default function AboutPage() {
       {/* Vision */}
       <section className="overflow-hidden bg-brand-dark">
         <div className="flex items-stretch">
-          <div className="relative h-[180px] w-[160px] shrink-0 overflow-hidden sm:h-[210px] sm:w-[200px] lg:h-[230px] lg:w-[240px]">
+          <div className="relative h-[260px] w-[42%] min-w-[220px] max-w-[560px] shrink-0 overflow-hidden sm:h-[300px] lg:h-[340px]">
             <Image
               src="/images/about/ceo.png"
               alt="대표이사"
               fill
-              className="origin-[52%_42%] scale-[2.4] object-cover object-[52%_42%]"
-              sizes="240px"
+              quality={95}
+              className="origin-[52%_42%] scale-[1.45] object-cover object-[52%_42%]"
+              sizes="(min-width: 1024px) 560px, 42vw"
               priority
             />
           </div>
 
-          <div className="flex min-w-0 flex-1 items-center px-5 py-5 sm:px-8 lg:px-12">
+          <div className="flex min-w-0 flex-1 items-center justify-center px-6 py-8 text-center sm:px-10 lg:px-16">
             <div>
               <p className="page-subtitle">Vision</p>
-              <h2 className="mt-2 whitespace-nowrap text-[clamp(0.8rem,2.15vw,1.75rem)] font-bold text-white sm:mt-3">
+              <h2 className="mt-3 whitespace-nowrap text-[clamp(0.85rem,2.1vw,1.85rem)] font-bold text-white">
                 {companyInfo.vision}
               </h2>
-              <p className="mt-2 whitespace-nowrap break-keep text-sm text-gray-300 sm:mt-3 sm:text-base">
+              <p className="mt-3 whitespace-nowrap break-keep text-sm text-gray-300 sm:text-base">
                 고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
               </p>
             </div>
