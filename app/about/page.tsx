@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import { companyInfo, history } from "@/data/company";
@@ -22,28 +23,29 @@ export default function AboutPage() {
       </HeroSlideshow>
 
       {/* Vision */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url(/images/about/ceo.png)",
-            backgroundPosition: "center calc(50% + 24px)",
-          }}
-          role="img"
-          aria-label="대표이사"
-        />
+      <section className="overflow-hidden bg-brand-dark">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative h-[280px] sm:h-[320px] lg:h-[380px]">
+            <Image
+              src="/images/about/ceo.png"
+              alt="대표이사"
+              fill
+              className="object-cover object-[center_12%]"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority
+            />
+          </div>
 
-        <div className="section-container relative z-10 min-h-[600px] sm:min-h-[680px]">
-          <div className="absolute left-1/2 top-[62%] w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-4 text-center sm:top-[60%]">
-            <p className="page-subtitle text-white/85 drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]">
-              Vision
-            </p>
-            <h2 className="mt-4 text-3xl font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] sm:text-4xl">
-              {companyInfo.vision}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]">
-              고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
-            </p>
+          <div className="flex items-center px-6 py-10 sm:px-10 lg:px-14 lg:py-0">
+            <div className="max-w-xl">
+              <p className="page-subtitle">Vision</p>
+              <h2 className="mt-4 text-2xl font-bold leading-snug text-white sm:text-3xl lg:text-[2.15rem]">
+                {companyInfo.vision}
+              </h2>
+              <p className="mt-4 break-keep text-gray-300">
+                고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
+              </p>
+            </div>
           </div>
         </div>
       </section>
