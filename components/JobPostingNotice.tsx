@@ -55,6 +55,30 @@ function OutlineSection({
   );
 }
 
+function ResumeTemplateDownload({
+  bordered = false,
+}: {
+  bordered?: boolean;
+}) {
+  return (
+    <div
+      className={
+        bordered
+          ? "border-t border-dashed border-white/15 py-5 last:pb-0"
+          : "rounded-2xl border border-white/10 px-5 py-6 sm:px-7"
+      }
+    >
+      <p className="font-bold text-white">▣ 이력서 양식 다운로드</p>
+      <a
+        href={resumeTemplateHref}
+        download={resumeTemplateDownloadName}
+        className="mt-3 inline-flex text-sm font-semibold text-brand-blue hover:underline"
+      >
+        이력서 양식 다운로드
+      </a>
+    </div>
+  );
+}
 export default function JobPostingNotice({ posting }: { posting: JobPosting }) {
   const hasNotice =
     posting.hireType ||
@@ -63,21 +87,24 @@ export default function JobPostingNotice({ posting }: { posting: JobPosting }) {
     posting.process?.length;
 
   if (!hasNotice) {
-    return posting.content.length > 0 ? (
+    return (
       <div className="space-y-5">
-        {posting.content.map((paragraph) => (
-          <p
-            key={paragraph.slice(0, 40)}
-            className="break-keep text-base leading-8 text-gray-300"
-          >
-            {paragraph}
+        {posting.content.length > 0 ? (
+          posting.content.map((paragraph) => (
+            <p
+              key={paragraph.slice(0, 40)}
+              className="break-keep text-base leading-8 text-gray-300"
+            >
+              {paragraph}
+            </p>
+          ))
+        ) : (
+          <p className="break-keep text-base leading-8 text-gray-400">
+            상세 내용은 이메일로 문의해 주시기 바랍니다.
           </p>
-        ))}
+        )}
+        <ResumeTemplateDownload />
       </div>
-    ) : (
-      <p className="break-keep text-base leading-8 text-gray-400">
-        상세 내용은 이메일로 문의해 주시기 바랍니다.
-      </p>
     );
   }
 
@@ -136,16 +163,7 @@ export default function JobPostingNotice({ posting }: { posting: JobPosting }) {
         <OutlineSection title="공통자격" items={posting.commonQualifications} />
         <OutlineSection title="전형방법" items={posting.process} />
         <OutlineSection title="접수방법" items={posting.applyMethod} />
-        <div className="border-t border-dashed border-white/15 py-5 last:pb-0">
-          <p className="font-bold text-white">▣ 이력서 양식 다운로드</p>
-          <a
-            href={resumeTemplateHref}
-            download={resumeTemplateDownloadName}
-            className="mt-3 inline-flex text-sm font-semibold text-brand-blue hover:underline"
-          >
-            이력서 양식 다운로드
-          </a>
-        </div>
+        <ResumeTemplateDownload bordered />
       </div>
 
       <InfoTable
