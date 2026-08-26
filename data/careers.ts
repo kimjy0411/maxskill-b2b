@@ -5,6 +5,10 @@ export const careersNav = [
   { href: "/careers", label: "채용정보" },
 ] as const;
 
+/** 파일을 public/files/ 에 같은 이름으로 넣으면 채용 상세에서 바로 받을 수 있습니다. */
+export const resumeTemplateHref = "/files/maxskill-resume-template.docx";
+export const resumeTemplateDownloadName = "맥스킬_이력서양식.docx";
+
 export const salarySystemIntro =
   "당사는 전직원에게 연봉제를 실시하고 있습니다.";
 
