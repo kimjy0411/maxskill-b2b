@@ -24,25 +24,25 @@ export default function AboutPage() {
 
       {/* Vision */}
       <section className="overflow-hidden bg-brand-dark">
-        <div className="grid lg:grid-cols-2">
-          <div className="relative h-[280px] sm:h-[320px] lg:h-[380px]">
+        <div className="flex items-stretch">
+          <div className="relative h-[180px] w-[160px] shrink-0 sm:h-[210px] sm:w-[200px] lg:h-[230px] lg:w-[240px]">
             <Image
               src="/images/about/ceo.png"
               alt="대표이사"
               fill
-              className="object-cover object-[center_12%]"
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[52%_18%]"
+              sizes="240px"
               priority
             />
           </div>
 
-          <div className="flex items-center px-6 py-10 sm:px-10 lg:px-14 lg:py-0">
-            <div className="max-w-xl">
+          <div className="flex flex-1 items-center px-5 py-5 sm:px-8 lg:px-12">
+            <div className="max-w-2xl">
               <p className="page-subtitle">Vision</p>
-              <h2 className="mt-4 text-2xl font-bold leading-snug text-white sm:text-3xl lg:text-[2.15rem]">
+              <h2 className="mt-2 text-lg font-bold leading-snug text-white sm:mt-3 sm:text-2xl lg:text-3xl">
                 {companyInfo.vision}
               </h2>
-              <p className="mt-4 break-keep text-gray-300">
+              <p className="mt-2 break-keep text-sm text-gray-300 sm:mt-3 sm:text-base">
                 고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
               </p>
             </div>
