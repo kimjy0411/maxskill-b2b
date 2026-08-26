@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="section-container py-28 sm:py-32 lg:py-36">
           <p className="page-subtitle">About Us</p>
           <h1 className="page-title mt-5 max-w-3xl">
-            <span className="text-brand-blue">회사</span> 소개
+            <span className="text-brand-blue">회사</span>소개
           </h1>
           <p className="mt-6 max-w-4xl break-keep text-base leading-8 text-gray-300 sm:text-lg">
             화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design,

@@ -70,7 +70,7 @@ export default function Header() {
                 : "text-gray-200 hover:text-white"
             }`}
           >
-            회사 소개
+            회사소개
           </Link>
 
           <div className="group relative">
@@ -119,7 +119,7 @@ export default function Header() {
                   : "text-gray-200 hover:text-white"
               }`}
             >
-              업무 분야
+              업무분야
             </Link>
 
             <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
@@ -224,7 +224,7 @@ export default function Header() {
                 pathname === "/about" ? "text-brand-blue" : "text-gray-200"
               }`}
             >
-              회사 소개
+              회사소개
             </Link>
 
             <div>
@@ -276,7 +276,7 @@ export default function Header() {
                   servicesActive ? "text-brand-blue" : "text-gray-200"
                 }`}
               >
-                업무 분야
+                업무분야
                 <span
                   className={`text-xs transition-transform ${servicesOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"

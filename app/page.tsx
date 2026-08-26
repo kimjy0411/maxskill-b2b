@@ -19,7 +19,7 @@ export default async function HomePage() {
       <section className="section-container py-20 sm:py-28">
         <SectionHeading
           label="Our Services"
-          title="업무 분야"
+          title="업무분야"
           description="Piping Design, Stress Analysis, 3D CAD, 설계 IT 분야의 전문 엔지니어링 서비스를 제공합니다."
         />
 
@@ -51,7 +51,7 @@ export default async function HomePage() {
             href="/about"
             className="mt-8 inline-flex rounded-full bg-brand-blue-dark px-8 py-3.5 text-sm font-bold text-white shadow-md transition-colors hover:brightness-110"
           >
-            회사 소개 보기
+            회사소개 보기
           </Link>
         </div>
       </section>
