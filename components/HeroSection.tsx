@@ -12,7 +12,7 @@ function HeroDescription() {
       <span className="font-semibold text-brand-blue">발전</span>,{" "}
       <span className="font-semibold text-brand-blue">LNG</span> 분야 플랜트
       엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD,
-      Programming 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.
+      설계 IT 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.
     </p>
   );
 }

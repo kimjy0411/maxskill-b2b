@@ -18,7 +18,7 @@ export default async function ProjectsPage() {
             <span className="text-brand-blue">프로젝트</span>
           </h1>
           <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-gray-400 sm:text-lg">
-            최근 10년간 화공, 발전, LNG 분야에서 수행한 프로젝트 목록입니다.
+            최근 10년간 화공, 발전, LNG, 산업설비 분야에서 수행한 프로젝트 목록입니다.
           </p>
         </div>
       </section>

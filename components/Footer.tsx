@@ -3,9 +3,10 @@ import Link from "next/link";
 import { companyInfo, services } from "@/data/company";
 
 const companyLinks = [
-  { href: "/about", label: "회사소개" },
-  { href: "/projects", label: "프로젝트" },
-  { href: "/careers", label: "채용정보" },
+  { href: "/about", label: "회사 소개" },
+  { href: "/projects", label: "사업영역" },
+  { href: "/services", label: "업무 분야" },
+  { href: "/careers", label: "인재채용" },
   { href: "/contact", label: "Contact Us" },
 ];
 

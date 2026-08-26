@@ -19,8 +19,8 @@ export default async function HomePage() {
       <section className="section-container py-20 sm:py-28">
         <SectionHeading
           label="Our Services"
-          title="사업 영역"
-          description="Piping Design, Stress Analysis, 3D CAD, Programming 분야의 전문 엔지니어링 서비스를 제공합니다."
+          title="업무 분야"
+          description="Piping Design, Stress Analysis, 3D CAD, 설계 IT 분야의 전문 엔지니어링 서비스를 제공합니다."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -62,7 +62,7 @@ export default async function HomePage() {
           <SectionHeading
             label="Projects"
             title="프로젝트"
-            description="화공, 발전, LNG 분야에서 축적된 프로젝트 경험"
+            description="화공, 발전, LNG, 산업설비 분야에서 축적된 프로젝트 경험"
           />
           <Link
             href="/projects"

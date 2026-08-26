@@ -4,6 +4,7 @@ const categoryStyles: Record<ProjectCategory, string> = {
   화공: "bg-brand-blue/20 text-brand-blue",
   발전: "bg-orange-500/20 text-orange-400",
   LNG: "bg-emerald-500/20 text-emerald-400",
+  산업설비: "bg-violet-500/20 text-violet-400",
 };
 
 interface ProjectCardProps {

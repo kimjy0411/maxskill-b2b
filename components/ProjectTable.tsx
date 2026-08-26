@@ -1,9 +1,13 @@
-import type { Project, ProjectCategory } from "@/data/projects";
+import {
+  projectCategories,
+  type Project,
+  type ProjectCategory,
+} from "@/data/projects";
 
 const columns = [
   { key: "name", label: "프로젝트", accent: "text-brand-tan" },
   { key: "client", label: "발주처", accent: "text-brand-blue" },
-  { key: "category", label: "화공/발전/LNG", accent: "text-brand-blue" },
+  { key: "category", label: "분야", accent: "text-brand-blue" },
   { key: "year", label: "Year", accent: "text-brand-blue" },
   { key: "location", label: "Location", accent: "text-brand-blue" },
   { key: "service", label: "Service", accent: "text-brand-blue" },
@@ -17,6 +21,11 @@ const categoryLabels: Record<
   화공: { ko: "화공", en: "Petrochemical Plant", badge: "bg-brand-tan text-black" },
   발전: { ko: "발전", en: "Power Plant", badge: "bg-brand-blue text-white" },
   LNG: { ko: "LNG", en: "LNG Plant", badge: "bg-emerald-500 text-white" },
+  산업설비: {
+    ko: "산업설비",
+    en: "Industrial Facilities",
+    badge: "bg-violet-500 text-white",
+  },
 };
 
 interface ProjectTableProps {
@@ -122,13 +131,11 @@ export function ProjectTableGroup({
 }: {
   groupedProjects: Record<ProjectCategory, Project[]>;
 }) {
-  const categories: ProjectCategory[] = ["화공", "발전", "LNG"];
-
   return (
     <div className="space-y-10 sm:space-y-14">
-      {categories.map((category) => {
-        const items = groupedProjects[category];
-        if (!items.length) return null;
+      {projectCategories.map((category) => {
+        const items = groupedProjects[category] ?? [];
+        const label = categoryLabels[category];
 
         return (
           <div
@@ -136,11 +143,26 @@ export function ProjectTableGroup({
             id={category}
             className="scroll-mt-28 sm:scroll-mt-32"
           >
-            <ProjectTable
-              projects={items}
-              category={category}
-              showCategoryBadge
-            />
+            {items.length > 0 ? (
+              <ProjectTable
+                projects={items}
+                category={category}
+                showCategoryBadge
+              />
+            ) : (
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
+                <div className="border-b border-white/10 px-6 py-4">
+                  <span
+                    className={`inline-block rounded-lg px-4 py-2 text-sm font-extrabold tracking-wide sm:text-base ${label.badge}`}
+                  >
+                    {label.ko} {label.en}
+                  </span>
+                </div>
+                <p className="px-6 py-8 text-sm text-gray-400">
+                  등록된 프로젝트가 없습니다.
+                </p>
+              </div>
+            )}
           </div>
         );
       })}

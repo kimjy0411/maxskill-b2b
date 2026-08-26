@@ -1,6 +1,6 @@
 import type { Project, ProjectCategory } from "@/data/projects";
 
-const CATEGORIES: ProjectCategory[] = ["화공", "발전", "LNG"];
+const CATEGORIES: ProjectCategory[] = ["화공", "발전", "LNG", "산업설비"];
 
 const HEADER_ALIASES: Record<string, keyof RowFields> = {
   name: "name",

@@ -70,8 +70,45 @@ export default function Header() {
                 : "text-gray-200 hover:text-white"
             }`}
           >
-            회사소개
+            회사 소개
           </Link>
+
+          <div className="group relative">
+            <Link
+              href="/projects"
+              className={`nav-link transition-colors ${
+                projectsActive
+                  ? "text-brand-blue"
+                  : "text-gray-200 hover:text-white"
+              }`}
+            >
+              사업영역
+            </Link>
+
+            <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-brand-dark shadow-2xl">
+                {projectCategories.map((category) => {
+                  const href = `/projects#${encodeURIComponent(category)}`;
+                  const isActive =
+                    pathname === "/projects" && hashMatches(activeHash, category);
+
+                  return (
+                    <Link
+                      key={category}
+                      href={href}
+                      className={`block px-5 py-3.5 text-sm font-semibold transition-colors ${
+                        isActive
+                          ? "bg-brand-blue/15 text-brand-blue"
+                          : "text-gray-200 hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      {category}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
 
           <div className="group relative">
             <Link
@@ -82,7 +119,7 @@ export default function Header() {
                   : "text-gray-200 hover:text-white"
               }`}
             >
-              사업분야
+              업무 분야
             </Link>
 
             <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
@@ -104,43 +141,6 @@ export default function Header() {
                       }`}
                     >
                       {service.title}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          <div className="group relative">
-            <Link
-              href="/projects"
-              className={`nav-link transition-colors ${
-                projectsActive
-                  ? "text-brand-blue"
-                  : "text-gray-200 hover:text-white"
-              }`}
-            >
-              프로젝트
-            </Link>
-
-            <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-brand-dark shadow-2xl">
-                {projectCategories.map((category) => {
-                  const href = `/projects#${encodeURIComponent(category)}`;
-                  const isActive =
-                    pathname === "/projects" && hashMatches(activeHash, category);
-
-                  return (
-                    <Link
-                      key={category}
-                      href={href}
-                      className={`block px-5 py-3.5 text-sm font-semibold transition-colors ${
-                        isActive
-                          ? "bg-brand-blue/15 text-brand-blue"
-                          : "text-gray-200 hover:bg-white/5 hover:text-white"
-                      }`}
-                    >
-                      {category}
                     </Link>
                   );
                 })}
@@ -224,49 +224,8 @@ export default function Header() {
                 pathname === "/about" ? "text-brand-blue" : "text-gray-200"
               }`}
             >
-              회사소개
+              회사 소개
             </Link>
-
-            <div>
-              <button
-                type="button"
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className={`nav-link flex w-full items-center justify-between ${
-                  servicesActive ? "text-brand-blue" : "text-gray-200"
-                }`}
-              >
-                사업분야
-                <span
-                  className={`text-xs transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                  aria-hidden="true"
-                >
-                  ▼
-                </span>
-              </button>
-
-              {servicesOpen && (
-                <div className="mt-4 flex flex-col gap-3 border-l border-white/10 pl-4">
-                  {services.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/services#${service.id}`}
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                      className={`text-sm font-semibold ${
-                        pathname === "/services" &&
-                        activeHash === `#${service.id}`
-                          ? "text-brand-blue"
-                          : "text-gray-300"
-                      }`}
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
 
             <div>
               <button
@@ -276,7 +235,7 @@ export default function Header() {
                   projectsActive ? "text-brand-blue" : "text-gray-200"
                 }`}
               >
-                프로젝트
+                사업영역
                 <span
                   className={`text-xs transition-transform ${projectsOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"
@@ -303,6 +262,47 @@ export default function Header() {
                       }`}
                     >
                       {category}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <button
+                type="button"
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className={`nav-link flex w-full items-center justify-between ${
+                  servicesActive ? "text-brand-blue" : "text-gray-200"
+                }`}
+              >
+                업무 분야
+                <span
+                  className={`text-xs transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                >
+                  ▼
+                </span>
+              </button>
+
+              {servicesOpen && (
+                <div className="mt-4 flex flex-col gap-3 border-l border-white/10 pl-4">
+                  {services.map((service) => (
+                    <Link
+                      key={service.id}
+                      href={`/services#${service.id}`}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        setServicesOpen(false);
+                      }}
+                      className={`text-sm font-semibold ${
+                        pathname === "/services" &&
+                        activeHash === `#${service.id}`
+                          ? "text-brand-blue"
+                          : "text-gray-300"
+                      }`}
+                    >
+                      {service.title}
                     </Link>
                   ))}
                 </div>

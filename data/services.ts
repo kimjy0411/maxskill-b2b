@@ -268,11 +268,11 @@ export const services: Service[] = [
   },
   {
     id: "programming",
-    title: "Programming",
+    title: "설계 IT",
     summary:
       "Customizing · Management — 맞춤형 프로그램 개발",
     intro: [
-      "맥스킬 Programming은 설계 소프트웨어 맞춤 개발과 함께, 인사·경영 업무를 지원하는 Management 프로그램을 개발합니다.",
+      "맥스킬 설계 IT는 설계 소프트웨어 맞춤 개발과 함께, 인사·경영 업무를 지원하는 Management 프로그램을 개발합니다.",
       "Customizing / Program Develop.에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
       "Management 프로그램은 인사 운영과 프로젝트·경영 현황을 실무에 맞게 관리할 수 있도록 지원합니다.",
     ],
@@ -313,7 +313,7 @@ export const services: Service[] = [
       },
     ],
     image: serviceBanner("programming.jpg"),
-    imageAlt: "Programming — Customizing · Management",
+    imageAlt: "설계 IT — Customizing · Management",
   },
 ];
 

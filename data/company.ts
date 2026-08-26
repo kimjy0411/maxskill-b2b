@@ -9,7 +9,7 @@ export const companyInfo = {
   vision:
     'Be a "Good Company" through Customer\'s Satisfaction',
   description:
-    "화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD, Programming 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.",
+    "화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD, 설계 IT 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.",
 };
 
 export const history = [

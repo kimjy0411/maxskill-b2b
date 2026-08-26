@@ -8,6 +8,7 @@ export function computeProjectStats(projectList: Project[]) {
     화공: projectList.filter((p) => p.category === "화공").length,
     발전: projectList.filter((p) => p.category === "발전").length,
     LNG: projectList.filter((p) => p.category === "LNG").length,
+    산업설비: projectList.filter((p) => p.category === "산업설비").length,
   };
 }
 
@@ -18,6 +19,7 @@ export function groupProjects(
     화공: projectList.filter((p) => p.category === "화공"),
     발전: projectList.filter((p) => p.category === "발전"),
     LNG: projectList.filter((p) => p.category === "LNG"),
+    산업설비: projectList.filter((p) => p.category === "산업설비"),
   };
 }
 

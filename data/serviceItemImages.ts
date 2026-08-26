@@ -186,7 +186,7 @@ export const serviceItemImages: Record<
     "object-cover object-[50%_38%]",
   ),
 
-  // ── Programming ──
+  // ── 설계 IT ──
   "programming/Customizing / Program Develop.": itemImage(
     "programming-customizing.png",
     "Customizing / Program Develop. — S3D · E3D · AutoCAD · Excel/VBA Auto Generation Workflow",
