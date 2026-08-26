@@ -7,16 +7,18 @@ const FILE_PATH = path.join(
   "files",
   "maxskill-resume-template.docx",
 );
-const DOWNLOAD_NAME = "맥스킬_이력서양식.docx";
+const DOWNLOAD_NAME = "(주)맥스킬 이력서.docx";
 
 export async function GET() {
   try {
     const file = await readFile(FILE_PATH);
+    const encodedName = encodeURIComponent(DOWNLOAD_NAME);
+
     return new Response(file, {
       headers: {
-        "Content-Type":
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "Content-Disposition": `attachment; filename="${DOWNLOAD_NAME}"; filename*=UTF-8''${encodeURIComponent(DOWNLOAD_NAME)}`,
+        "Content-Type": "application/octet-stream",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Disposition": `attachment; filename="resume.docx"; filename*=UTF-8''${encodedName}`,
         "Cache-Control": "no-store",
       },
     });
