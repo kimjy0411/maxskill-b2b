@@ -30,7 +30,7 @@ export default function AboutPage() {
               src="/images/about/ceo.png"
               alt="대표이사"
               fill
-              className="origin-[52%_20%] scale-[2.4] object-cover object-[52%_20%]"
+              className="origin-[52%_42%] scale-[2.4] object-cover object-[52%_42%]"
               sizes="240px"
               priority
             />
