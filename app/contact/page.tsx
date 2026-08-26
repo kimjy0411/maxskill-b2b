@@ -1,3 +1,4 @@
+import EmailActionButton from "@/components/EmailActionButton";
 import { companyInfo } from "@/data/company";
 
 export default function ContactPage() {
@@ -42,12 +43,11 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-10">
-              <a
-                href={`mailto:${companyInfo.email}`}
-                className="brand-font inline-flex rounded-full border border-brand-blue px-6 py-3 text-sm text-brand-blue transition-colors hover:bg-brand-blue hover:text-white"
-              >
-                이메일 보내기
-              </a>
+              <EmailActionButton
+                email={companyInfo.email}
+                label="이메일 보내기"
+                variant="outline"
+              />
             </div>
           </div>
         </div>

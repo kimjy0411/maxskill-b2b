@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CareersBanner from "@/components/CareersBanner";
+import EmailActionButton from "@/components/EmailActionButton";
 import JobPostingNotice from "@/components/JobPostingNotice";
 import { companyInfo } from "@/data/company";
 import { getAdjacentJobPostings, getJobPosting, getJobPostings } from "@/lib/jobPostings";
@@ -38,9 +39,7 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
   const { previous, next } = getAdjacentJobPostings(postings, posting.id);
 
   const applyEmail = posting.contactEmail || companyInfo.email;
-  const applyHref = `mailto:${applyEmail}?subject=${encodeURIComponent(
-    `[채용지원] ${posting.title}`,
-  )}`;
+  const applySubject = `[채용지원] ${posting.title}`;
 
   return (
     <main>
@@ -88,21 +87,28 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
         <article className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-brand-card p-6 sm:p-10">
           <JobPostingNotice posting={posting} />
 
-          <div className="flex flex-wrap gap-3 pt-4">
-            {posting.status === "진행중" && (
-              <a
-                href={applyHref}
-                className="inline-flex rounded-full bg-brand-blue px-6 py-3 text-sm font-bold text-white transition-colors hover:brightness-110"
+          <div className="pt-4">
+            {posting.status === "진행중" ? (
+              <EmailActionButton
+                email={applyEmail}
+                subject={applySubject}
+                label="이메일로 지원하기"
               >
-                이메일로 지원하기
-              </a>
+                <Link
+                  href="/careers"
+                  className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
+                >
+                  목록으로
+                </Link>
+              </EmailActionButton>
+            ) : (
+              <Link
+                href="/careers"
+                className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
+              >
+                목록으로
+              </Link>
             )}
-            <Link
-              href="/careers"
-              className="inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-gray-200 transition-colors hover:border-white/40"
-            >
-              목록으로
-            </Link>
           </div>
         </article>
 
