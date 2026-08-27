@@ -28,9 +28,6 @@ export default function Footer() {
               height={66}
               className="h-14 w-auto"
             />
-            <p className="mt-4 max-w-md text-sm leading-7 text-white/80">
-              {companyInfo.description}
-            </p>
             <div className="mt-6 space-y-1 text-sm text-white/70">
               <p>{companyInfo.address}</p>
               <p>T {companyInfo.tel}</p>
