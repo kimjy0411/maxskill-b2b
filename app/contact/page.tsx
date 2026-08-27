@@ -39,10 +39,6 @@ export default function ContactPage() {
                 <p className="mt-1 text-white">T {companyInfo.tel}</p>
                 <p className="text-white">F {companyInfo.fax}</p>
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-400">Website</p>
-                <p className="mt-1 text-brand-blue">{companyInfo.website}</p>
-              </div>
             </div>
           </div>
 
