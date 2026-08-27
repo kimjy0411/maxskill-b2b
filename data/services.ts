@@ -32,7 +32,6 @@ export const services: Service[] = [
     summary:
       "Planning · Basic Design · Detail Design — 배관 설계 전 공정 One-Stop 수행",
     intro: [
-      "맥스킬은 화공·발전·LNG 플랜트 프로젝트에서 배관 설계(Piping Design) 전 공정을 수행합니다. Project Scheduling·Coordination부터 Detail Design 도면까지 일관된 품질 기준으로 프로젝트를 지원합니다.",
       "Planning 단계에서는 WBS·마일스톤 기반 일정 수립과 Mechanical, Instrument, Electrical, Civil 등 유관 공종 간 인터페이스를 조율합니다. Basic Design에서는 Plot Plan을 통해 배관 라우팅·설비 배치·공간 활용을 최적화하고, Detail Design에서는 3D Plan/ISO, Stress ISO, Support Detail, Information 도면까지 실무에 바로 적용 가능한 산출물을 제공합니다.",
       "국내외 대형 EPC 프로젝트에서 축적된 설계 경험을 바탕으로, 설계 변경·현장 대응·재작업을 최소화하는 실용적인 배관 설계 솔루션을 제공합니다.",
     ],
@@ -109,7 +108,6 @@ export const services: Service[] = [
     summary:
       "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석 전문",
     intro: [
-      "맥스킬 Stress Analysis 팀은 Thermal Analysis, Special Support 설계, Trouble Shooting을 수행합니다. CAESAR II 등 업계 표준 해석 도구를 활용하여 배관 관련 안전성·신뢰성을 검증합니다.",
       "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대해서도 신속한 해석·대안 제시가 가능합니다. Piping Design과 유기적으로 연계되어 Stress ISO 도면까지 일관된 품질로 제공합니다.",
       "국내외 화공·발전·LNG 프로젝트에서 High Temperature·High Pressure 배관, Critical Line에 대한 해석 경험을 보유하고 있으며, Owner·EPC·Contractor 요구 Specification에 맞춘 해석 보고서를 작성합니다.",
     ],
@@ -186,7 +184,6 @@ export const services: Service[] = [
     summary:
       "S3D·E3D·SP3D 기반 3D Modeling, Model Review, Clash Check",
     intro: [
-      "맥스킬 3D CAD 팀은 Smart 3D(S3D), E3D, PDS/PDMS, SP3D 등 주요 3D CAD 플랫폼에서 Admin, Modeling, Model Review, Clash Check 업무를 수행합니다. SPEC/CATA 관리와 프로젝트 3D 환경 구축을 담당합니다.",
       "Equipment/Structure, Piping/Support, Instrument & Electrical, Duct/HVAC 등 전 공종 3D 모델링과 Clash Check를 통해 설계 품질을 사전에 검증합니다.",
       "Navisworks 등 3D 3rd Party Program 연동으로 Multi-discipline 모델을 통합 리뷰하고, 설계 이슈를 Tracking합니다.",
     ],
@@ -272,7 +269,6 @@ export const services: Service[] = [
     summary:
       "Customizing · Management — 맞춤형 프로그램 개발",
     intro: [
-      "맥스킬 설계 IT는 설계 소프트웨어 맞춤 개발과 함께, 인사·경영 업무를 지원하는 Management 프로그램을 개발합니다.",
       "Customizing / Program Develop.에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
       "Management 프로그램은 인사 운영과 프로젝트·경영 현황을 실무에 맞게 관리할 수 있도록 지원합니다.",
     ],
