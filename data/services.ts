@@ -182,13 +182,13 @@ export const services: Service[] = [
     id: "cad",
     title: "3D CAD",
     summary:
-      "S3D·E3D·SP3D 기반 3D Modeling, Model Review, Clash Check",
+      "S3D·E3D 기반 3D Modeling, Model Review, Clash Check",
     intro: [
       "Equipment/Structure, Piping/Support, Instrument & Electrical, Duct/HVAC 등 전 공종 3D 모델링과 Clash Check를 통해 설계 품질을 사전에 검증합니다.",
       "Navisworks 등 3D 3rd Party Program 연동으로 Multi-discipline 모델을 통합 리뷰하고, 설계 이슈를 Tracking합니다.",
     ],
     highlights: [
-      "S3D / E3D / PDS·PDMS / SP3D 다중 플랫폼 운영",
+      "S3D / E3D 다중 플랫폼 운영",
       "전 공종 3D Modeling 및 Multi-discipline Clash Check",
       "3D 3rd Party Program 연동 (Navisworks 등)",
     ],
@@ -201,7 +201,7 @@ export const services: Service[] = [
           {
             name: "S3D / E3D Admin",
             description:
-              "Project Setup, Catalog/Spec 관리, Naming Rule·Weight/CG Rule 설정. PDS/PDMS, E3D, SP3D 환경 Migration 및 Custom Report 설정.",
+              "Project Setup, Catalog/Spec 관리, Naming Rule·Weight/CG Rule 설정. S3D, E3D 환경 Migration 및 Custom Report 설정.",
           },
           {
             name: "P&ID Check Admin.",

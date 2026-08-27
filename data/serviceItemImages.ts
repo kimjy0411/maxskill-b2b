@@ -182,7 +182,7 @@ export const serviceItemImages: Record<
   ),
   "cad/3D 3rd Party Program": itemImage(
     "cad-3rd-party.jpg",
-    "Navisworks — PDMS·Tekla·IFC 등 멀티 디시플린 3D 모델 통합 리뷰",
+    "Navisworks — E3D·Tekla·IFC 등 멀티 디시플린 3D 모델 통합 리뷰",
     "object-cover object-[50%_38%]",
   ),
 
