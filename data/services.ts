@@ -188,7 +188,7 @@ export const services: Service[] = [
       "Navisworks 등 3D 3rd Party Program 연동으로 Multi-discipline 모델을 통합 리뷰하고, 설계 이슈를 Tracking합니다.",
     ],
     highlights: [
-      "S3D / E3D 다중 플랫폼 운영",
+      "S3D, E3D 등 다중 플랫폼 운영",
       "전 공종 3D Modeling 및 Multi-discipline Clash Check",
       "3D 3rd Party Program 연동 (Navisworks 등)",
     ],
