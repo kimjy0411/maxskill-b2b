@@ -81,7 +81,7 @@ export default function BusinessAreasContent({
         <article
           key={area.id}
           id={area.id}
-          className="relative overflow-hidden scroll-mt-28 sm:scroll-mt-32"
+          className="relative flex min-h-[48rem] flex-col overflow-hidden scroll-mt-28 sm:min-h-[52rem] sm:scroll-mt-32 lg:min-h-[56rem]"
         >
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -92,7 +92,7 @@ export default function BusinessAreasContent({
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-black/5" />
 
-          <div className="section-container relative py-20 sm:py-24 lg:py-28">
+          <div className="section-container relative flex w-full flex-1 flex-col justify-between py-20 sm:py-24 lg:py-28">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-16">
               <div>
                 <p className="page-subtitle">Business Area</p>
