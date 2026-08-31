@@ -1,10 +1,22 @@
-import ProjectsPageContent from "@/components/ProjectsPageContent";
-import { getProjectsPageData } from "@/lib/projects";
+import Link from "next/link";
+import BusinessAreasContent from "@/components/BusinessAreasContent";
+import { businessAreas, pickFeaturedProjects } from "@/data/businessAreas";
+import { getProjects } from "@/lib/projects";
 
 export const revalidate = 300;
 
+export const metadata = {
+  title: "사업분야 | MAXSKILL",
+  description:
+    "화공, 발전, LNG, 산업설비 분야의 배관 설계 엔지니어링 서비스를 제공합니다.",
+};
+
 export default async function ProjectsPage() {
-  const { groupedProjects, projectStats, source } = await getProjectsPageData();
+  const projects = await getProjects();
+  const areas = businessAreas.map((area) => ({
+    ...area,
+    featured: pickFeaturedProjects(projects, area),
+  }));
 
   return (
     <main>
@@ -13,38 +25,24 @@ export default async function ProjectsPage() {
         <div className="absolute -bottom-40 left-1/4 h-[400px] w-[400px] rounded-full bg-brand-blue/5 blur-3xl" />
 
         <div className="section-container relative py-20 sm:py-28 lg:py-36">
-          <p className="page-subtitle">Projects</p>
+          <p className="page-subtitle">Business Areas</p>
           <h1 className="page-title mt-5 max-w-3xl">
-            <span className="text-brand-blue">프로젝트</span>
+            <span className="text-brand-blue">사업</span>분야
           </h1>
           <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-gray-400 sm:text-lg">
-            최근 10년간 화공, 발전, LNG, 산업설비 분야에서 수행한 프로젝트 목록입니다.
+            화공, 발전, LNG, 산업설비 분야의 배관 설계 엔지니어링 서비스를
+            제공합니다.
           </p>
+          <Link
+            href="/projects/list"
+            className="mt-8 inline-flex rounded-full bg-brand-blue px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-blue-dark"
+          >
+            프로젝트 리스트
+          </Link>
         </div>
       </section>
 
-      <section className="section-container-wide py-16 sm:py-20 lg:py-24">
-        <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="page-subtitle">Project List</p>
-            <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-              프로젝트 목록
-            </h2>
-          </div>
-          <p className="text-sm font-medium text-gray-400">
-            Total {projectStats.total} Projects
-            {source === "sheet" && (
-              <span className="ml-2 text-brand-blue">· Google Sheet 연동</span>
-            )}
-          </p>
-        </div>
-
-        <ProjectsPageContent groupedProjects={groupedProjects} />
-
-        <p className="mt-8 text-sm text-gray-500">
-          M : Modeling · D : Design · S : Stress · C : Construction Supervisor
-        </p>
-      </section>
+      <BusinessAreasContent areas={areas} />
     </main>
   );
 }

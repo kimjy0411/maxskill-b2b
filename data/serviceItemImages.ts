@@ -119,18 +119,18 @@ export const serviceItemImages: Record<
   ),
 
   // ── 3D CAD ──
-  "cad/S3D / E3D Admin": itemImage(
+  "programming/S3D / E3D Admin": itemImage(
     "cad-s3d-admin.jpg",
     "S3D / E3D Admin — 3D 모델·도면 검토 및 원격 협업",
     "object-cover object-center",
   ),
-  "cad/P&ID Check Admin.": itemImage(
+  "programming/P&ID Check Admin.": itemImage(
     "cad-pid-admin.jpg",
     "P&ID Check Admin — SCODE Overlay·Line Color Check",
     "object-cover object-center",
     "relative h-56 overflow-hidden bg-white sm:h-64",
   ),
-  "cad/SPEC / CATA Management": itemImage(
+  "programming/SPEC / CATA Management": itemImage(
     "cad-spec-cata.jpg",
     "SPEC / CATA Management — Catalog·Component Parameter 설정",
     "object-cover object-center",
@@ -186,7 +186,7 @@ export const serviceItemImages: Record<
     "object-cover object-[50%_38%]",
   ),
 
-  // ── 설계 IT ──
+  // ── Programming ──
   "programming/Customizing / Program Develop.": itemImage(
     "programming-customizing.png",
     "Customizing / Program Develop. — S3D · E3D · AutoCAD · Excel/VBA Auto Generation Workflow",
@@ -194,14 +194,6 @@ export const serviceItemImages: Record<
     "relative aspect-[3/2] overflow-hidden bg-[#1a1d22]",
     undefined,
     true,
-  ),
-  "programming/인사관리": itemImage(
-    "programming-management.jpg",
-    "인사관리 프로그램",
-  ),
-  "programming/경영관리": itemImage(
-    "programming-design-automation.jpg",
-    "경영관리 프로그램",
   ),
 };
 

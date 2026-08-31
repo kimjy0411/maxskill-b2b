@@ -2,16 +2,11 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import ProjectTable from "@/components/ProjectTable";
+import BusinessAreaCard from "@/components/BusinessAreaCard";
 import { companyInfo, services, getServiceCardItems } from "@/data/company";
-import { getProjects } from "@/lib/projects";
+import { businessAreas } from "@/data/businessAreas";
 
-export const revalidate = 300;
-
-export default async function HomePage() {
-  const projects = await getProjects();
-  const featuredProjects = projects.slice(0, 5);
-
+export default function HomePage() {
   return (
     <main>
       <HeroSection />
@@ -56,24 +51,26 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="section-container-wide py-20 sm:py-28">
+      {/* Business Areas Preview */}
+      <section className="section-container py-20 sm:py-28">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            label="Projects"
-            title="프로젝트"
-            description="화공, 발전, LNG, 산업설비 분야에서 축적된 프로젝트 경험"
+            label="Business Areas"
+            title="사업분야"
+            description="화공, 발전, LNG, 산업설비 분야의 배관 설계 엔지니어링 서비스를 제공합니다."
           />
           <Link
             href="/projects"
             className="brand-font shrink-0 text-sm text-brand-blue hover:text-brand-blue-dark"
           >
-            전체 보기 →
+            자세히 보기 →
           </Link>
         </div>
 
-        <div className="mt-14 -mx-2 sm:mx-0">
-          <ProjectTable projects={featuredProjects} />
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {businessAreas.map((area) => (
+            <BusinessAreaCard key={area.id} area={area} />
+          ))}
         </div>
       </section>
     </main>

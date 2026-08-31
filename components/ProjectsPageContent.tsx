@@ -25,7 +25,7 @@ export default function ProjectsPageContent({
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== "/projects") return;
+    if (pathname !== "/projects/list") return;
 
     const hash = window.location.hash;
     if (!hash) return;

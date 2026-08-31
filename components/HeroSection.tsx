@@ -36,7 +36,7 @@ export default function HeroSection() {
               href="/projects"
               className="rounded-full bg-brand-blue px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-blue-dark"
             >
-              프로젝트 보기
+              사업분야 보기
             </Link>
             <Link
               href="/contact"

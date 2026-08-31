@@ -194,28 +194,6 @@ export const services: Service[] = [
     ],
     sections: [
       {
-        title: "Admin",
-        description:
-          "프로젝트 3D 환경 구축 및 SPEC/CATA/P&ID 데이터베이스 관리를 담당합니다.",
-        items: [
-          {
-            name: "S3D / E3D Admin",
-            description:
-              "Project Setup, Catalog/Spec 관리, Naming Rule·Weight/CG Rule 설정. S3D, E3D 환경 Migration 및 Custom Report 설정.",
-          },
-          {
-            name: "P&ID Check Admin.",
-            description:
-              "P&ID와 3D 모델 간 Line Number, Valve, Instrument, Equipment Tag 정합성 검토 기준 설정. P&ID Update 연동 Admin.",
-          },
-          {
-            name: "SPEC / CATA Management",
-            description:
-              "Material Class, Pipe Support, Instrument, Equipment Spec 관리. Project Standard 반영 및 Vendor Data 연계.",
-          },
-        ],
-      },
-      {
         title: "Modeling",
         description:
           "전 공종 3D 모델을 작성하여 설계 간 간섭을 사전에 확인하고 시공성·유지보수성을 확보합니다.",
@@ -266,20 +244,41 @@ export const services: Service[] = [
   {
     id: "programming",
     title: "설계 IT",
-    summary:
-      "Customizing · Management — 맞춤형 프로그램 개발",
+    summary: "Admin · Programming — 3D 설계 환경과 맞춤형 프로그램 개발",
     intro: [
-      "Customizing / Program Develop.에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
-      "Management 프로그램은 인사 운영과 프로젝트·경영 현황을 실무에 맞게 관리할 수 있도록 지원합니다.",
+      "Admin에서는 프로젝트 3D 환경 구축과 SPEC/CATA/P&ID 데이터베이스를 담당합니다. S3D, E3D의 Project Setup, Catalog/Spec, Naming Rule 설정부터 P&ID와 3D 모델 정합성 기준까지 설계 기반을 제공합니다.",
+      "Programming에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
     ],
     highlights: [
+      "S3D / E3D Admin",
+      "P&ID Check · SPEC / CATA",
       "Customizing / Program Develop.",
-      "Management — 인사관리",
-      "Management — 경영관리",
     ],
     sections: [
       {
-        title: "Program Development",
+        title: "Admin",
+        description:
+          "프로젝트 3D 환경 구축 및 SPEC/CATA/P&ID 데이터베이스를 담당합니다.",
+        items: [
+          {
+            name: "S3D / E3D Admin",
+            description:
+              "Project Setup, Catalog/Spec 관리, Naming Rule·Weight/CG Rule 설정. S3D, E3D 환경 Migration 및 Custom Report 설정.",
+          },
+          {
+            name: "P&ID Check Admin.",
+            description:
+              "P&ID와 3D 모델 간 Line Number, Valve, Instrument, Equipment Tag 정합성 검토 기준 설정. P&ID Update 연동 Admin.",
+          },
+          {
+            name: "SPEC / CATA Management",
+            description:
+              "Material Class, Pipe Support, Instrument, Equipment Spec 관리. Project Standard 반영 및 Vendor Data 연계.",
+          },
+        ],
+      },
+      {
+        title: "Programming",
         description:
           "기존 설계 소프트웨어와 프로젝트 프로세스에 맞춘 프로그램을 개발·커스터마이징합니다.",
         items: [
@@ -290,26 +289,9 @@ export const services: Service[] = [
           },
         ],
       },
-      {
-        title: "Management",
-        description:
-          "인사 운영과 경영 현황을 관리할 수 있는 프로그램을 개발합니다.",
-        items: [
-          {
-            name: "인사관리",
-            description:
-              "인력 현황, 근태, 평가, 조직 정보 등 인사 운영에 필요한 기능을 프로젝트·회사 프로세스에 맞춰 구성합니다.",
-          },
-          {
-            name: "경영관리",
-            description:
-              "설계 진도, 공정, M/H, 원가·실적 등 경영 관리 지표를 추적하고, Drawing Status·Transmittal·Revision 현황을 한눈에 볼 수 있도록 지원합니다.",
-          },
-        ],
-      },
     ],
     image: serviceBanner("programming.jpg"),
-    imageAlt: "설계 IT — Customizing · Management",
+    imageAlt: "설계 IT — Admin · Programming",
   },
 ];
 

@@ -82,7 +82,7 @@ export default function Header() {
                   : "text-gray-200 hover:text-white"
               }`}
             >
-              사업영역
+              사업분야
             </Link>
 
             <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
@@ -235,7 +235,7 @@ export default function Header() {
                   projectsActive ? "text-brand-blue" : "text-gray-200"
                 }`}
               >
-                사업영역
+                사업분야
                 <span
                   className={`text-xs transition-transform ${projectsOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"

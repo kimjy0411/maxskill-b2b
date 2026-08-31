@@ -1,0 +1,138 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import type { Project } from "@/data/projects";
+import type { BusinessArea } from "@/data/businessAreas";
+
+function scrollToHash(hash: string) {
+  if (!hash) return;
+
+  const id = decodeURIComponent(hash.slice(1));
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+export type BusinessAreaView = BusinessArea & {
+  featured: Project[];
+};
+
+interface BusinessAreasContentProps {
+  areas: BusinessAreaView[];
+}
+
+function FeaturedProjects({ projects }: { projects: Project[] }) {
+  if (projects.length === 0) {
+    return (
+      <p className="text-sm text-white/60">대표 프로젝트는 준비 중입니다.</p>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {projects.map((project) => (
+        <article
+          key={project.id}
+          className="rounded-2xl border border-white/15 bg-black/50 p-6 backdrop-blur-sm"
+        >
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-blue">
+            {project.year}
+          </p>
+          <h3 className="mt-3 text-lg font-bold leading-snug text-white">
+            {project.name}
+          </h3>
+          <p className="mt-3 text-sm font-medium text-white/80">
+            {project.client}
+          </p>
+          <p className="mt-1 text-sm text-white/55">{project.location}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export default function BusinessAreasContent({
+  areas,
+}: BusinessAreasContentProps) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== "/projects") return;
+
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const timer = window.setTimeout(() => scrollToHash(hash), 100);
+    return () => window.clearTimeout(timer);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onHashChange = () => scrollToHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  return (
+    <div>
+      {areas.map((area) => (
+        <article
+          key={area.id}
+          id={area.id}
+          className="relative overflow-hidden scroll-mt-28 sm:scroll-mt-32"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${area.image})` }}
+            role="img"
+            aria-label={area.imageAlt}
+          />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-black/5" />
+
+          <div className="section-container relative py-20 sm:py-24 lg:py-28">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-16">
+              <div>
+                <p className="page-subtitle">Business Area</p>
+                <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+                  {area.title}
+                </h2>
+                {area.titleEn !== area.title && (
+                  <p className="mt-3 text-base font-medium text-brand-blue sm:text-lg">
+                    {area.titleEn}
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-5">
+                {area.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    className="break-keep text-base leading-8 text-white/85"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-12 sm:mt-14">
+              <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+                <h3 className="text-xl font-bold text-white">대표 프로젝트</h3>
+                <Link
+                  href={`/projects/list#${encodeURIComponent(area.id)}`}
+                  className="inline-flex shrink-0 rounded-full border border-white/30 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10"
+                >
+                  프로젝트 리스트
+                </Link>
+              </div>
+              <FeaturedProjects projects={area.featured} />
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}

@@ -4,7 +4,7 @@ import { companyInfo, services } from "@/data/company";
 
 const companyLinks = [
   { href: "/about", label: "회사소개" },
-  { href: "/projects", label: "사업영역" },
+  { href: "/projects", label: "사업분야" },
   { href: "/services", label: "업무분야" },
   { href: "/careers", label: "인재채용" },
   { href: "/contact", label: "Contact Us" },
