@@ -5,9 +5,9 @@ const FILE_PATH = path.join(
   process.cwd(),
   "public",
   "files",
-  "maxskill-resume-template.docx",
+  "maxskill-resume-template.xlsx",
 );
-const DOWNLOAD_NAME = "(주)맥스킬 이력서.docx";
+const DOWNLOAD_NAME = "(주)맥스킬 이력서 양식.xlsx";
 
 export async function GET() {
   try {
@@ -16,9 +16,10 @@ export async function GET() {
 
     return new Response(file, {
       headers: {
-        "Content-Type": "application/octet-stream",
+        "Content-Type":
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         "X-Content-Type-Options": "nosniff",
-        "Content-Disposition": `attachment; filename="resume.docx"; filename*=UTF-8''${encodedName}`,
+        "Content-Disposition": `attachment; filename="resume.xlsx"; filename*=UTF-8''${encodedName}`,
         "Cache-Control": "no-store",
       },
     });

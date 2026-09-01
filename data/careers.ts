@@ -7,7 +7,7 @@ export const careersNav = [
 
 /** 채용 상세에서 이력서 양식을 받을 때 쓰는 주소 */
 export const resumeTemplateHref = "/api/resume-template";
-export const resumeTemplateDownloadName = "(주)맥스킬 이력서.docx";
+export const resumeTemplateDownloadName = "(주)맥스킬 이력서 양식.xlsx";
 
 export const salarySystemIntro =
   "당사는 전직원에게 연봉제를 실시하고 있습니다.";
