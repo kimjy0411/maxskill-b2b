@@ -34,6 +34,7 @@ export const serviceItemImages: Record<
     imageContainerClass?: string;
     imageBodyClass?: string;
     unoptimized?: boolean;
+    intrinsic?: boolean;
   }
 > = {
   // ── Piping Design ──
@@ -119,22 +120,33 @@ export const serviceItemImages: Record<
   ),
 
   // ── 3D CAD ──
-  "programming/S3D / E3D Admin": itemImage(
+  "programming/Project Setup": itemImage(
     "cad-s3d-admin.jpg",
-    "S3D / E3D Admin — 3D 모델·도면 검토 및 원격 협업",
+    "Project Setup — 3D 모델·도면 검토 및 원격 협업",
     "object-cover object-center",
   ),
-  "programming/P&ID Check Admin.": itemImage(
-    "cad-pid-admin.jpg",
-    "P&ID Check Admin — SCODE Overlay·Line Color Check",
-    "object-cover object-center",
-    "relative h-56 overflow-hidden bg-white sm:h-64",
-  ),
-  "programming/SPEC / CATA Management": itemImage(
+  "programming/Specification & Catalogue": itemImage(
     "cad-spec-cata.jpg",
-    "SPEC / CATA Management — Catalog·Component Parameter 설정",
+    "Specification & Catalogue — Catalog·Component Parameter 설정",
     "object-cover object-center",
     "relative h-56 overflow-hidden bg-white sm:h-64",
+  ),
+  "programming/Customizing": itemImage(
+    "programming-customizing.png",
+    "Customizing — S3D · E3D · AutoCAD Auto Generation Workflow",
+    "object-contain object-center",
+    "relative h-56 overflow-hidden bg-brand-dark sm:h-64",
+  ),
+  "programming/3D Total Application": {
+    src: "/images/services/maxskill-workpro.png",
+    alt: "3D Total Application — MaxskillWorkPro",
+    filename: "maxskill-workpro.png",
+    intrinsic: true,
+  },
+  "programming/P&ID": itemImage(
+    "cad-pid-admin.jpg",
+    "P&ID — P&ID와 3D 정합성 검토",
+    "object-cover object-center",
   ),
   "cad/Equip./Structure": itemImage(
     "cad-equip-structure.jpg",
@@ -156,9 +168,9 @@ export const serviceItemImages: Record<
     "Duct·HVAC 3D Modeling",
     "object-cover object-center",
   ),
-  "cad/Clash Check": itemImage(
+  "cad/Model 검증": itemImage(
     "cad-clash-check.jpg",
-    "3D Clash Check — 배관·구조물 Hard Clash 검출",
+    "Model 검증 — 배관·구조물 Hard Clash 검출",
   ),
   "cad/3D Product Line Check": itemImage(
     "cad-product-line-check.jpg",
@@ -180,21 +192,12 @@ export const serviceItemImages: Record<
     "cad-bom-iso.jpg",
     "BOM·ISO 도면 자동 생성 Management",
   ),
-  "cad/3D 3rd Party Program": itemImage(
+  "cad/Navisworks 검증": itemImage(
     "cad-3rd-party.jpg",
-    "Navisworks — E3D·Tekla·IFC 등 멀티 디시플린 3D 모델 통합 리뷰",
+    "Navisworks 검증 — E3D·Tekla·IFC 등 멀티 디시플린 3D 모델 통합 리뷰",
     "object-cover object-[50%_38%]",
   ),
 
-  // ── Programming ──
-  "programming/Customizing / Program Develop.": itemImage(
-    "programming-customizing.png",
-    "Customizing / Program Develop. — S3D · E3D · AutoCAD · Excel/VBA Auto Generation Workflow",
-    "object-contain object-center",
-    "relative aspect-[3/2] overflow-hidden bg-[#1a1d22]",
-    undefined,
-    true,
-  ),
 };
 
 export function getServiceItemImage(serviceId: string, itemName: string) {

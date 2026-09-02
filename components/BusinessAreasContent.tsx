@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import type { Project } from "@/data/projects";
-import type { BusinessArea } from "@/data/businessAreas";
+import type { BusinessArea, FeaturedProject } from "@/data/businessAreas";
 
 function scrollToHash(hash: string) {
   if (!hash) return;
@@ -17,14 +16,14 @@ function scrollToHash(hash: string) {
 }
 
 export type BusinessAreaView = BusinessArea & {
-  featured: Project[];
+  featured: FeaturedProject[];
 };
 
 interface BusinessAreasContentProps {
   areas: BusinessAreaView[];
 }
 
-function FeaturedProjects({ projects }: { projects: Project[] }) {
+function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) {
   if (projects.length === 0) {
     return (
       <p className="text-sm text-white/60">대표 프로젝트는 준비 중입니다.</p>
@@ -42,7 +41,7 @@ function FeaturedProjects({ projects }: { projects: Project[] }) {
             {project.year}
           </p>
           <h3 className="mt-3 text-lg font-bold leading-snug text-white">
-            {project.name}
+            {project.displayName}
           </h3>
           <p className="mt-3 text-sm font-medium text-white/80">
             {project.client}

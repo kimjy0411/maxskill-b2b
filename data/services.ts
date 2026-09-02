@@ -7,6 +7,12 @@ export interface ServiceSection {
   title: string;
   description: string;
   items: ServiceItem[];
+  display?: "cards" | "list" | "featured";
+}
+
+export interface PlatformLogo {
+  src: string;
+  alt: string;
 }
 
 export interface Service {
@@ -15,6 +21,8 @@ export interface Service {
   summary: string;
   intro: string[];
   highlights: string[];
+  platformLogos?: PlatformLogo[];
+  sectionsLayout?: "stacked" | "split";
   sections: ServiceSection[];
   image: string;
   imageAlt: string;
@@ -182,21 +190,40 @@ export const services: Service[] = [
     id: "cad",
     title: "3D CAD",
     summary:
-      "S3D·E3D 기반 3D Modeling, Model Review, Clash Check",
+      "설계의 모든 과정을 3D CAD 기반으로 수행하여 정확성, 효율성, 품질을 향상",
     intro: [
-      "Equipment/Structure, Piping/Support, Instrument & Electrical, Duct/HVAC 등 전 공종 3D 모델링과 Clash Check를 통해 설계 품질을 사전에 검증합니다.",
-      "Navisworks 등 3D 3rd Party Program 연동으로 Multi-discipline 모델을 통합 리뷰하고, 설계 이슈를 Tracking합니다.",
+      "Piping / Structure / Equipment / Support / Instrument & Electrical / Duct·HVAC 등 전 공종을 3D Model",
+      "3D Model 기반으로 Clash Check 및 Design Review를 수행하여 설계 오류를 사전에 검증",
+      "Navisworks를 활용한 3D 통합 검토 및 설계 검증",
     ],
-    highlights: [
-      "S3D, E3D 등 다중 플랫폼 운영",
-      "전 공종 3D Modeling 및 Multi-discipline Clash Check",
-      "3D 3rd Party Program 연동 (Navisworks 등)",
+    highlights: [],
+    platformLogos: [
+      {
+        src: "/images/services/platforms/hexagon.svg",
+        alt: "Hexagon",
+      },
+      {
+        src: "/images/services/platforms/aveva.png",
+        alt: "AVEVA",
+      },
+      {
+        src: "/images/services/platforms/autocad-plant3d.svg",
+        alt: "AutoCAD Plant 3D",
+      },
+      {
+        src: "/images/services/platforms/revit.svg",
+        alt: "Autodesk Revit",
+      },
+      {
+        src: "/images/services/platforms/bentley.svg",
+        alt: "Bentley",
+      },
     ],
     sections: [
       {
         title: "Modeling",
         description:
-          "전 공종 3D 모델을 작성하여 설계 간 간섭을 사전에 확인하고 시공성·유지보수성을 확보합니다.",
+          "Piping / Structure / Equipment / Support / Instrument & Electrical / Duct·HVAC 등 전 공종을 3D Model",
         items: [
           {
             name: "Equip./Structure",
@@ -221,80 +248,126 @@ export const services: Service[] = [
         ],
       },
       {
-        title: "Model Review",
+        title: "Model Check",
         description:
-          "3D 모델 간섭 검토와 외부 프로그램 연동을 통해 설계 품질을 확인합니다.",
+          "3D Model 기반으로 Clash Check 및 Design Review를 수행하여 설계 오류를 사전에 검증하고, Navisworks를 활용한 3D 통합 검토 및 설계 검증을 수행합니다.",
         items: [
           {
-            name: "Clash Check",
+            name: "Model 검증",
             description:
-              "Hard Clash, Soft Clash, Clearance Check 등 Multi-discipline 간섭 검토. Clash Report 작성 및 Design Resolution Tracking.",
+              "Design 및 Human Error 검토하여 3D Model의 정확성, 효율성, 품질을 향상합니다.",
           },
           {
-            name: "3D 3rd Party Program",
+            name: "Navisworks 검증",
             description:
-              "Navisworks 등 외부 프로그램으로 3D 모델을 통합 리뷰합니다. Multi-discipline 모델 취합, Clash·Walk-through 검토, 설계 이슈 Tracking을 지원합니다.",
+              "Hard, Soft, Clearance Check 등 간섭 검토 및 Report 작성 및 Design Tracking. Model Review로 Design과 Model의 정확성, 품질을 검토합니다.",
           },
         ],
       },
     ],
-    image: serviceBanner("cad.jpg"),
-    imageAlt: "3D CAD Clash Check — 배관·구조 간섭 검토",
+    image: serviceBanner("cad.png"),
+    imageAlt: "3D CAD — 3D Model, Model Review, Plan/ISO DWG, Report",
   },
   {
     id: "programming",
     title: "설계 IT",
-    summary: "Admin · Programming — 3D 설계 환경과 맞춤형 프로그램 개발",
-    intro: [
-      "Admin에서는 프로젝트 3D 환경 구축과 SPEC/CATA/P&ID 데이터베이스를 담당합니다. S3D, E3D의 Project Setup, Catalog/Spec, Naming Rule 설정부터 P&ID와 3D 모델 정합성 기준까지 설계 기반을 제공합니다.",
-      "Programming에서는 S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼에 맞춘 Custom Macro, Report, Interface와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 제공합니다.",
-    ],
-    highlights: [
-      "S3D / E3D Admin",
-      "P&ID Check · SPEC / CATA",
-      "Customizing / Program Develop.",
-    ],
+    summary: "Admin · Programming",
+    intro: [],
+    highlights: [],
+    sectionsLayout: "split",
     sections: [
       {
         title: "Admin",
-        description:
-          "프로젝트 3D 환경 구축 및 SPEC/CATA/P&ID 데이터베이스를 담당합니다.",
+        description: "",
+        display: "list",
+        items: [
+          { name: "Project Setup", description: "" },
+          { name: "Specification & Catalogue", description: "" },
+          {
+            name: "제출 성과품 및 Inform을 위한 Setting",
+            description: "",
+          },
+          { name: "Trouble Shooting", description: "" },
+          { name: "모든 3D Model Platform 가능", description: "" },
+        ],
+      },
+      {
+        title: "Program",
+        description: "",
+        display: "list",
         items: [
           {
-            name: "S3D / E3D Admin",
-            description:
-              "Project Setup, Catalog/Spec 관리, Naming Rule·Weight/CG Rule 설정. S3D, E3D 환경 Migration 및 Custom Report 설정.",
+            name: "3D Modeling 관련 Application Program",
+            description: "",
           },
           {
-            name: "P&ID Check Admin.",
-            description:
-              "P&ID와 3D 모델 간 Line Number, Valve, Instrument, Equipment Tag 정합성 검토 기준 설정. P&ID Update 연동 Admin.",
+            name: "3D 검토 및 성과품 관련 Utility Program",
+            description: "",
           },
           {
-            name: "SPEC / CATA Management",
+            name: "P&ID와 3D 간 정합성 Check Program",
+            description: "",
+          },
+          {
+            name: "3D Admin 관련 Application Program",
+            description: "",
+          },
+          { name: "경영관리 지원 Program", description: "" },
+        ],
+      },
+      {
+        title: "Admin",
+        description: "",
+        items: [
+          {
+            name: "Project Setup",
             description:
-              "Material Class, Pipe Support, Instrument, Equipment Spec 관리. Project Standard 반영 및 Vendor Data 연계.",
+              "Project의 모든 특성과 조건을 고려하여 프로젝트를 생성하고, ISO, PLAN, Support Drawing의 Setting 작업을 수행합니다. Modeling 관련 Error 및 Trouble을 해결합니다.",
+          },
+          {
+            name: "Specification & Catalogue",
+            description:
+              "PMS를 기반으로 전 공정의 Specification을 작성하고, Vendor Print의 내용과 형상을 기반으로 Catalogue를 생성합니다.",
           },
         ],
       },
       {
-        title: "Programming",
-        description:
-          "기존 설계 소프트웨어와 프로젝트 프로세스에 맞춘 프로그램을 개발·커스터마이징합니다.",
+        title: "Program",
+        description: "",
+        display: "featured",
         items: [
           {
-            name: "Customizing / Program Develop.",
+            name: "Customizing",
             description:
               "S3D, E3D, AutoCAD, Excel/VBA 등 플랫폼 기반 Custom Macro, Report, Interface 개발. 프로젝트 Standard·Template·Check List 자동화와 Line List → 3D Model → ISO/BOM 자동 생성 Workflow를 지원합니다.",
+          },
+          {
+            name: "3D Total Application",
+            description:
+              "3D 작업의 통일성과 정확성을 높이고 작업시간을 단축하여, 전체적인 Project 품질 향상을 목적으로 개발된 E3D 연동 통합 Add-in 프로그램입니다.",
+          },
+          {
+            name: "P&ID",
+            description:
+              "P&ID와 3D 모델 간 Line Number, Valve, Instrument, Equipment Tag 정합성 검토 기준 설정. P&ID Update 연동 Admin.",
           },
         ],
       },
     ],
     image: serviceBanner("programming.jpg"),
-    imageAlt: "설계 IT — Admin · Programming",
+    imageAlt: "설계 IT — Programming",
   },
 ];
 
 export function getServiceCardItems(service: Service) {
-  return service.highlights.slice(0, 3);
+  if (service.highlights.length > 0) {
+    return service.highlights.slice(0, 3);
+  }
+  const titles = service.sections
+    .filter(
+      (section) =>
+        service.sectionsLayout !== "split" || section.display === "list",
+    )
+    .map((section) => section.title);
+  return [...new Set(titles)].slice(0, 3);
 }

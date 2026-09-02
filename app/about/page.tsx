@@ -89,6 +89,23 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-brand-card-border bg-brand-card px-6 py-6">
+            <p className="text-sm text-gray-400">
+              {companyInfo.scaleYear}년 기준 매출
+            </p>
+            <p className="mt-2 text-3xl font-bold text-white">
+              {companyInfo.revenue}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-brand-card-border bg-brand-card px-6 py-6">
+            <p className="text-sm text-gray-400">재직 인원</p>
+            <p className="mt-2 text-3xl font-bold text-white">
+              {companyInfo.headcount}
+            </p>
+          </div>
+        </div>
       </section>
 
     </main>

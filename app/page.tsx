@@ -27,7 +27,10 @@ export default function HomePage() {
               items={getServiceCardItems(service)}
               image={service.image}
               imageAlt={service.imageAlt}
-              imageContain={service.id === "piping"}
+              imageContain={
+                service.id === "piping" || service.id === "cad"
+              }
+              imageLight={service.id === "cad"}
             />
           ))}
         </div>

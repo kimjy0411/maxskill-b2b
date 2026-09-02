@@ -7,6 +7,7 @@ interface ServiceCardProps {
   image: string;
   imageAlt: string;
   imageContain?: boolean;
+  imageLight?: boolean;
 }
 
 export default function ServiceCard({
@@ -16,10 +17,15 @@ export default function ServiceCard({
   image,
   imageAlt,
   imageContain = false,
+  imageLight = false,
 }: ServiceCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card transition-colors hover:border-brand-blue/30">
-      <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-brand-dark">
+      <div
+        className={`relative aspect-[16/9] overflow-hidden border-b border-white/10 ${
+          imageLight ? "bg-white" : "bg-brand-dark"
+        }`}
+      >
         <Image
           src={image}
           alt={imageAlt}
@@ -39,17 +45,19 @@ export default function ServiceCard({
           {summary}
         </p>
 
-        <ul className="mt-6 space-y-2">
-          {items.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-2 text-sm text-gray-300"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        {items.length > 0 && (
+          <ul className="mt-6 space-y-2">
+            {items.map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-2 text-sm text-gray-300"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </article>
   );

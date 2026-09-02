@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 42" role="img" aria-label="AVEVA">
+  <g fill="#6B2C91">
+    <!-- A: 상단 8 · 발 7 · 가로획 8 (V와 동일) -->
+    <path fill-rule="evenodd" d="M13 4h8l12 34h-7l-4-6H12L8 38H1Z M17 11l5 13h-10Z"/>
+    <!-- V -->
+    <path d="M39 4h8l8 24 8-24h8L58.5 38h-7Z"/>
+    <!-- E: 막대 두께 8 -->
+    <rect x="77" y="4" width="26" height="8"/>
+    <rect x="77" y="17" width="26" height="8"/>
+    <rect x="77" y="30" width="26" height="8"/>
+    <!-- V -->
+    <path d="M109 4h8l8 24 8-24h8L128.5 38h-7Z"/>
+    <!-- A -->
+    <path fill-rule="evenodd" d="M151 4h8l12 34h-7l-4-6H150L146 38h-7Z M155 11l5 13h-10Z"/>
+  </g>
+</svg>

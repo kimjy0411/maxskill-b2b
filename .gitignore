@@ -33,4 +33,5 @@ next-env.d.ts
 # temp extraction
 /temp-pptx/
 temp-pptx.zip
+/temp-xlsx-comments/
 .vercel
