@@ -369,5 +369,5 @@ export function getServiceCardItems(service: Service) {
         service.sectionsLayout !== "split" || section.display === "list",
     )
     .map((section) => section.title);
-  return [...new Set(titles)].slice(0, 3);
+  return titles.filter((title, index) => titles.indexOf(title) === index).slice(0, 3);
 }
