@@ -50,4 +50,8 @@
   .page-subtitle {
     @apply text-sm font-bold uppercase tracking-[0.2em] text-brand-blue;
   }
+
+  .body-copy {
+    @apply break-keep leading-8;
+  }
 }

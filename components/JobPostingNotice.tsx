@@ -43,7 +43,7 @@ function OutlineSection({
       <p className="font-bold text-white">▣ {title}</p>
       <ul className="mt-3 space-y-1.5">
         {items.map((item) => (
-          <li key={item} className="break-keep text-sm leading-7 text-gray-300">
+          <li key={item} className="body-copy text-sm text-gray-300">
             {item}
           </li>
         ))}
@@ -66,13 +66,13 @@ export default function JobPostingNotice({ posting }: { posting: JobPosting }) {
           posting.content.map((paragraph) => (
             <p
               key={paragraph.slice(0, 40)}
-              className="break-keep text-base leading-8 text-gray-300"
+              className="body-copy text-base text-gray-300"
             >
               {paragraph}
             </p>
           ))
         ) : (
-          <p className="break-keep text-base leading-8 text-gray-400">
+          <p className="body-copy text-base text-gray-400">
             상세 내용은 이메일로 문의해 주시기 바랍니다.
           </p>
         )}

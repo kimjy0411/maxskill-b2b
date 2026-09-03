@@ -25,7 +25,7 @@ export default function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 break-keep leading-7 md:whitespace-nowrap ${light ? "text-white/70" : "text-gray-400"}`}
+          className={`body-copy mt-4 md:whitespace-nowrap ${light ? "text-white/70" : "text-gray-400"}`}
         >
           {description}
         </p>

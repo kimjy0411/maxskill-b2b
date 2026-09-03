@@ -111,7 +111,7 @@ export default function BusinessAreasContent({
                 {area.paragraphs.map((paragraph) => (
                   <p
                     key={paragraph.slice(0, 40)}
-                    className="break-keep text-base leading-8 text-white/85"
+                    className="body-copy text-base text-white/85"
                   >
                     {paragraph}
                   </p>

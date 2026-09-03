@@ -15,7 +15,7 @@ export default function CareersHrPage() {
             <h2 className="text-2xl font-bold text-brand-blue sm:text-3xl">
               급여체계
             </h2>
-            <p className="mt-4 text-base leading-8 text-gray-300">
+            <p className="body-copy mt-4 text-base text-gray-300">
               {salarySystemIntro}
             </p>
 
@@ -62,7 +62,7 @@ export default function CareersHrPage() {
                               {row.items.map((item) => (
                                 <li
                                   key={item}
-                                  className="text-sm leading-relaxed text-gray-300 sm:text-base"
+                                  className="body-copy text-sm text-gray-300 sm:text-base"
                                 >
                                   {item}
                                 </li>
@@ -90,7 +90,7 @@ export default function CareersHrPage() {
               {employeeBenefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex gap-3 text-base leading-relaxed text-gray-300"
+                  className="body-copy flex gap-3 text-base text-gray-300"
                 >
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue" />
                   {benefit}

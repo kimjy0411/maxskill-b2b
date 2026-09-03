@@ -17,7 +17,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             {companyInfo.vision}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/80">
+          <p className="body-copy mx-auto mt-4 max-w-2xl text-white/80">
             고객 만족을 통해 &apos;Good Company&apos;가 되겠습니다.
           </p>
           <Link
@@ -53,6 +53,7 @@ export default function HomePage() {
           {services.map((service) => (
             <ServiceCard
               key={service.id}
+              href={`/services#${service.id}`}
               title={service.title}
               summary={service.summary}
               items={getServiceCardItems(service)}

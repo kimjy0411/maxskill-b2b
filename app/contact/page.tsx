@@ -17,7 +17,7 @@ export default function ContactPage() {
             <div className="mt-8 space-y-6">
               <div>
                 <p className="text-sm font-medium text-gray-400">Address</p>
-                <p className="mt-1 break-keep text-white">{companyInfo.address}</p>
+                <p className="body-copy mt-1 text-white">{companyInfo.address}</p>
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-400">Email</p>
@@ -33,7 +33,7 @@ export default function ContactPage() {
 
           <div>
             <h2 className="text-2xl font-bold text-white">오시는 길</h2>
-            <p className="mt-3 break-keep text-sm text-gray-400">
+            <p className="body-copy mt-3 text-sm text-gray-400">
               {companyInfo.address}
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-brand-card">

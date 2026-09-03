@@ -25,8 +25,8 @@ export const businessAreas: BusinessArea[] = [
       "고온·고압 및 저온·저압의 다양한 공정 조건을 고려하여 배관 설계를 수행하며, 배관 스트레스 해석과 서포트 설계를 체계적으로 연계하여 안전성과 신뢰성을 확보한 최적의 배관 설계 솔루션을 제공합니다.",
     ],
     featuredNames: [
-      "사우디 APCO PHD/UTOS Project",
       { match: "여수 금호폴리켐", display: "여수 금호폴리켐 EPDM PLANT" },
+      "사우디 APCO PHD/UTOS Project",
       "Sarawak PetChem Methanol",
     ],
     image: "/images/hero/lng.jpg",

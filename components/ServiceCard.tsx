@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
+  href: string;
   title: string;
   summary: string;
   items: string[];
@@ -11,6 +13,7 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({
+  href,
   title,
   summary,
   items,
@@ -20,7 +23,10 @@ export default function ServiceCard({
   imageLight = false,
 }: ServiceCardProps) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card transition-colors hover:border-brand-blue/30">
+    <Link
+      href={href}
+      className="group flex flex-col overflow-hidden rounded-2xl border border-brand-card-border bg-brand-card transition-colors hover:border-brand-blue/30"
+    >
       <div
         className={`relative aspect-[16/9] overflow-hidden border-b border-white/10 ${
           imageLight ? "bg-white" : "bg-brand-dark"
@@ -41,7 +47,7 @@ export default function ServiceCard({
 
       <div className="flex flex-1 flex-col p-8 sm:p-10">
         <h3 className="whitespace-nowrap text-xl font-bold text-white">{title}</h3>
-        <p className="mt-4 flex-1 text-sm leading-7 text-gray-400">
+        <p className="body-copy mt-4 flex-1 text-sm text-gray-400">
           {summary}
         </p>
 
@@ -59,6 +65,6 @@ export default function ServiceCard({
           </ul>
         )}
       </div>
-    </article>
+    </Link>
   );
 }

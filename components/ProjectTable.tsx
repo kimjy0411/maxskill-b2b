@@ -81,7 +81,7 @@ function TableBody({ projects }: { projects: Project[] }) {
             index % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"
           }`}
         >
-          <td className="px-5 py-4 text-sm font-semibold leading-relaxed text-white sm:px-6 sm:text-base">
+          <td className="body-copy px-5 py-4 text-sm font-semibold text-white sm:px-6 sm:text-base">
             {project.name}
           </td>
           <td className="whitespace-nowrap px-5 py-4 text-sm font-medium text-gray-300 sm:px-6 sm:text-base">

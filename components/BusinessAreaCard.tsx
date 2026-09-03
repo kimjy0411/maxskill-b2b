@@ -22,7 +22,7 @@ export default function BusinessAreaCard({ area }: { area: BusinessArea }) {
             {area.titleEn}
           </p>
         )}
-        <p className="mt-4 flex-1 break-keep text-sm leading-7 text-white/80">
+        <p className="body-copy mt-4 flex-1 text-sm text-white/80">
           {area.paragraphs[0]}
         </p>
       </div>

@@ -81,7 +81,7 @@ function renderServiceItemCard(
           {item.name}
         </p>
         {item.description ? (
-          <p className="mt-1.5 break-keep text-xs leading-6 text-gray-400 sm:text-sm">
+          <p className="body-copy mt-2 text-xs text-gray-400 sm:text-sm">
             {item.description}
           </p>
         ) : null}
@@ -113,7 +113,7 @@ export default function ServiceDetail({
         <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
           {service.title}
         </h2>
-        <p className="mt-4 text-base font-medium text-brand-blue sm:text-lg">
+        <p className="body-copy mt-6 text-base font-medium text-brand-blue sm:text-lg">
           {service.summary}
         </p>
       </div>
@@ -142,11 +142,11 @@ export default function ServiceDetail({
       </div>
 
       <div className="p-8 sm:p-10 lg:p-12">
-        <div className="space-y-5">
+        <div className="space-y-6">
           {service.intro.map((paragraph) => (
             <p
               key={paragraph.slice(0, 40)}
-              className="break-keep text-base leading-8 text-gray-300"
+              className="body-copy text-base text-gray-300"
             >
               {paragraph}
             </p>
@@ -158,7 +158,7 @@ export default function ServiceDetail({
             {service.highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-start gap-3 rounded-xl border border-brand-card-border bg-brand-dark/50 px-4 py-3 text-sm leading-7 text-gray-200"
+                className="body-copy flex items-start gap-3 rounded-xl border border-brand-card-border bg-brand-dark/50 px-4 py-3 text-sm text-gray-200"
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue" />
                 {highlight}
@@ -198,7 +198,7 @@ export default function ServiceDetail({
               <h3 className="text-xl font-bold text-white">{section.title}</h3>
               <div className="mt-2 h-px w-full bg-brand-card-border" />
               {section.description ? (
-                <p className="mt-4 break-keep text-sm leading-7 text-gray-400">
+                <p className="body-copy mt-4 text-sm text-gray-400">
                   {section.description}
                 </p>
               ) : null}
@@ -207,7 +207,7 @@ export default function ServiceDetail({
                 {section.items.map((item) => (
                   <li
                     key={item.name}
-                    className="flex items-start gap-3 text-sm leading-7 text-gray-200"
+                    className="body-copy flex items-start gap-3 text-sm text-gray-200"
                   >
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue" />
                     {item.name}
@@ -226,7 +226,7 @@ export default function ServiceDetail({
                 <h3 className="text-xl font-bold text-white">{section.title}</h3>
                 <div className="mt-2 h-px w-full bg-brand-card-border" />
                 {section.description ? (
-                  <p className="mt-4 break-keep text-sm leading-7 text-gray-400">
+                  <p className="body-copy mt-4 text-sm text-gray-400">
                     {section.description}
                   </p>
                 ) : null}
@@ -236,13 +236,13 @@ export default function ServiceDetail({
                     {section.items.map((item) => (
                       <li
                         key={item.name}
-                        className="flex items-start gap-3 rounded-xl border border-brand-card-border bg-brand-dark/40 px-4 py-3 text-sm leading-7 text-gray-200"
+                        className="body-copy flex items-start gap-3 rounded-xl border border-brand-card-border bg-brand-dark/40 px-4 py-3 text-sm text-gray-200"
                       >
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue" />
                         <span>
                           {item.name}
                           {item.description ? (
-                            <span className="mt-1 block break-keep text-xs leading-6 text-gray-400 sm:text-sm">
+                            <span className="body-copy mt-1.5 block text-xs text-gray-400 sm:text-sm">
                               {item.description}
                             </span>
                           ) : null}

@@ -11,7 +11,7 @@ export default function CareersBanner() {
         aria-hidden
       />
       <div className="absolute inset-0 bg-brand-blue/75" />
-      <p className="relative px-6 py-10 text-center text-base font-semibold leading-relaxed text-white sm:px-10 sm:py-12 sm:text-lg">
+      <p className="body-copy relative px-6 py-10 text-center text-base font-semibold text-white sm:px-10 sm:py-12 sm:text-lg">
         {careersBannerText}
       </p>
     </div>

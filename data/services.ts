@@ -113,7 +113,7 @@ export const services: Service[] = [
     id: "stress",
     title: "Stress Analysis",
     summary:
-      "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석 전문",
+      "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석",
     intro: [
       "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대한 해석·대응안을 작성합니다. Piping Design과 연계하여 Stress ISO 도면을 작성합니다.",
       "국내외 화공·발전·LNG 프로젝트에서 High Temperature·High Pressure 배관, Critical Line에 대한 해석 경험을 보유하고 있으며, Owner·EPC·Contractor 요구 Specification에 맞춘 해석 보고서를 작성합니다.",
