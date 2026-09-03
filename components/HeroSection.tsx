@@ -16,19 +16,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="page-hero">
+    <section className="page-hero" aria-label="맥스킬">
       <HeroBackgroundSlides slides={heroSlides} activeIndex={activeIndex} />
 
-      <div className="page-hero-inner">
-        <div className="page-hero-copy">
-          <h1 className="page-title whitespace-nowrap text-[clamp(1.25rem,4.6vw,3.75rem)] [text-shadow:0_2px_20px_rgba(0,0,0,0.7)]">
-            플랜트 엔지니어링의{" "}
-            <span className="text-brand-blue">미래</span>를 설계합니다
-          </h1>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-10">
+      <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-6">
         {heroSlides.map((slide, index) => (
           <button
             key={slide.category}

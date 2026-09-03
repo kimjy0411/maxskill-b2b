@@ -21,8 +21,11 @@ export function HeroBackgroundSlides({
         >
           {/* 원본 파일 그대로 사용 (Next.js 압축 없음) + inset으로 전경 넓게 */}
           <div
-            className="absolute -inset-[7%] bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.src})` }}
+            className="absolute -inset-[4%] bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: `url(${slide.src})`,
+              backgroundPosition: slide.position,
+            }}
             role="img"
             aria-label={slide.alt}
           />

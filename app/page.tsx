@@ -9,6 +9,7 @@ import { businessAreas } from "@/data/businessAreas";
 export default function HomePage() {
   return (
     <main>
+      <h1 className="sr-only">{companyInfo.name}</h1>
       <HeroSection />
 
       <section className="flex min-h-[260px] items-center bg-brand-blue sm:min-h-[300px] lg:min-h-[340px]">

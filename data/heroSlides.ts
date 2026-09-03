@@ -4,18 +4,21 @@ export const heroSlides = [
     label: "Petrochemical Plant",
     src: "/images/hero/plant-night.jpg",
     alt: "야간 석유화학 플랜트 전경",
+    position: "center 58%",
   },
   {
     category: "발전",
     label: "Power Plant",
     src: "/images/hero/chemical.jpg",
     alt: "정유 플랜트 전경",
+    position: "center 64%",
   },
   {
     category: "LNG",
     label: "LNG Plant",
     src: "/images/hero/lng.jpg",
     alt: "원거리 LNG 플랜트 전경",
+    position: "center 56%",
   },
 ] as const;
 

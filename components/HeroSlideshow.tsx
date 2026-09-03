@@ -11,13 +11,11 @@ import {
 interface HeroSlideshowProps {
   slides?: readonly HeroSlide[];
   children: React.ReactNode;
-  minHeight?: string;
 }
 
 export default function HeroSlideshow({
   slides = heroSlides,
   children,
-  minHeight = "h-[calc(100svh-6.75rem)] min-h-[22rem]",
 }: HeroSlideshowProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -30,14 +28,14 @@ export default function HeroSlideshow({
   }, [slides.length]);
 
   return (
-    <section className={`page-hero ${minHeight}`}>
+    <section className="page-hero">
       <HeroBackgroundSlides slides={slides} activeIndex={activeIndex} />
 
       <div className="page-hero-inner">
         <div className="page-hero-copy">{children}</div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-10">
+      <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-6">
         {slides.map((slide, index) => (
           <button
             key={slide.category}

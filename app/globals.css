@@ -32,11 +32,11 @@
   }
 
   .page-hero {
-    @apply relative flex h-[calc(100svh-6.75rem)] min-h-[22rem] items-center overflow-hidden bg-brand-dark;
+    @apply relative flex h-[min(28rem,48svh)] min-h-[17rem] items-center overflow-hidden bg-brand-dark;
   }
 
   .page-hero-inner {
-    @apply section-container relative z-10 flex w-full flex-col justify-center py-16 sm:py-20;
+    @apply section-container relative z-10 flex w-full flex-col justify-center py-8 sm:py-10;
   }
 
   .page-hero-copy {
