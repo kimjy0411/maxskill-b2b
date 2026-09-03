@@ -1,3 +1,4 @@
+import PageHero from "@/components/PageHero";
 import CareersBanner from "@/components/CareersBanner";
 import JobPostingTable from "@/components/JobPostingTable";
 import { getJobPostings } from "@/lib/jobPostings";
@@ -9,16 +10,7 @@ export default async function CareersPage() {
 
   return (
     <main>
-      <section className="page-hero">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-brand-blue/10 blur-3xl" />
-
-        <div className="section-container relative py-20 sm:py-28 lg:py-36">
-          <p className="page-subtitle">Careers</p>
-          <h1 className="page-title mt-5 max-w-3xl">
-            <span className="text-brand-blue">채용</span>정보
-          </h1>
-        </div>
-      </section>
+      <PageHero subtitle="Careers" title="채용정보" />
 
       <section className="section-container py-16 sm:py-20">
         <CareersBanner />

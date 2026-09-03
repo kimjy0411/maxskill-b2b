@@ -1,19 +1,11 @@
+import PageHero from "@/components/PageHero";
 import CareersBanner from "@/components/CareersBanner";
 import { employeeBenefits, salarySystemIntro, salaryTable } from "@/data/careers";
 
 export default function CareersHrPage() {
   return (
     <main>
-      <section className="page-hero">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-brand-blue/10 blur-3xl" />
-
-        <div className="section-container relative py-20 sm:py-28 lg:py-36">
-          <p className="page-subtitle">Careers</p>
-          <h1 className="page-title mt-5 max-w-3xl">
-            <span className="text-brand-blue">인사</span>제도
-          </h1>
-        </div>
-      </section>
+      <PageHero subtitle="Careers" title="인사제도" />
 
       <section className="section-container py-16 sm:py-20">
         <CareersBanner />

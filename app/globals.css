@@ -32,7 +32,15 @@
   }
 
   .page-hero {
-    @apply relative overflow-hidden bg-brand-dark;
+    @apply relative flex h-[calc(100svh-6.75rem)] min-h-[22rem] items-center overflow-hidden bg-brand-dark;
+  }
+
+  .page-hero-inner {
+    @apply section-container relative z-10 flex w-full flex-col justify-center py-16 sm:py-20;
+  }
+
+  .page-hero-copy {
+    @apply mx-auto w-full max-w-4xl text-center lg:mx-0 lg:text-left;
   }
 
   .page-title {

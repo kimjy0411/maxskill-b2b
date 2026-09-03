@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 import { notFound } from "next/navigation";
 import CareersBanner from "@/components/CareersBanner";
 import JobPostingNotice from "@/components/JobPostingNotice";
@@ -38,16 +39,11 @@ export default async function JobPostingPage({ params }: JobPostingPageProps) {
 
   return (
     <main>
-      <section className="page-hero">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-brand-blue/10 blur-3xl" />
-
-        <div className="section-container relative py-20 sm:py-28 lg:py-36">
-          <p className="page-subtitle">Careers</p>
-          <h1 className="page-title mt-5 max-w-4xl break-keep">
-            {posting.title}
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        subtitle="Careers"
+        title={posting.title}
+        titleClassName="max-w-4xl break-keep"
+      />
 
       <section className="section-container py-16 sm:py-20">
         <CareersBanner />

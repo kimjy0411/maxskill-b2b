@@ -72,7 +72,14 @@ export const businessAreas: BusinessArea[] = [
       "반도체 FAB, WWT(폐수처리), Utility 및 각종 산업설비를 대상으로 전문적인 배관 설계 서비스를 제공합니다.",
       "복잡한 설비 구성과 다양한 운전 조건을 고려하여 공정 및 유틸리티 배관의 배치, 3D 모델링, 응력 해석 및 서포트 설계를 수행하며, 생산설비의 안정적인 운영과 효율적인 시공을 고려한 최적의 배관 설계 솔루션을 제공합니다.",
     ],
-    featuredNames: [],
+    featuredNames: [
+      { match: "현대제철", display: "현대제철 (HPLS)" },
+      {
+        match: "P5 ph-1",
+        display: "삼성전자 P5 ph-1 2공구(삼성물산)",
+      },
+      { match: "흑연", display: "DYPNF 구형흑연 기본설계" },
+    ],
     image: "/images/hero/industrial-wwt.png",
     imageAlt: "산업 수처리 설비 전경",
   },
@@ -119,7 +126,9 @@ export function pickFeaturedProjects(
       const matchName = featuredMatchName(item);
       const project =
         findFeaturedProject(inCategory, matchName) ??
-        findFeaturedProject(fallbackCategory, matchName);
+        findFeaturedProject(fallbackCategory, matchName) ??
+        findFeaturedProject(projects, matchName) ??
+        findFeaturedProject(fallbackProjects, matchName);
       if (!project) return null;
       return { ...project, displayName: featuredDisplayName(item, project) };
     })

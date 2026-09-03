@@ -14,6 +14,9 @@ const columns = [
   { key: "tool", label: "Tool", accent: "text-brand-blue" },
 ] as const;
 
+const serviceLegend =
+  "M : Modeling · D : Design · S : Stress · C : Construction Supervisor";
+
 const categoryLabels: Record<
   ProjectCategory,
   { ko: string; en: string; badge: string }
@@ -32,6 +35,23 @@ interface ProjectTableProps {
   projects: Project[];
   showCategoryBadge?: boolean;
   category?: ProjectCategory;
+}
+
+function CategoryBar({ category }: { category: ProjectCategory }) {
+  const label = categoryLabels[category];
+
+  return (
+    <div className="flex flex-col gap-3 border-b border-white/10 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <span
+        className={`inline-block rounded-lg px-4 py-2 text-sm font-extrabold tracking-wide sm:text-base ${label.badge}`}
+      >
+        {label.ko} {label.en}
+      </span>
+      <p className="text-xs text-gray-500 sm:text-sm sm:whitespace-nowrap">
+        {serviceLegend}
+      </p>
+    </div>
+  );
 }
 
 function TableHeader() {
@@ -93,19 +113,9 @@ export default function ProjectTable({
   showCategoryBadge = false,
   category,
 }: ProjectTableProps) {
-  const label = category ? categoryLabels[category] : null;
-
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
-      {showCategoryBadge && label && (
-        <div className="border-b border-white/10 px-6 py-4">
-          <span
-            className={`inline-block rounded-lg px-4 py-2 text-sm font-extrabold tracking-wide sm:text-base ${label.badge}`}
-          >
-            {label.ko} {label.en}
-          </span>
-        </div>
-      )}
+      {showCategoryBadge && category && <CategoryBar category={category} />}
 
       <div className="overflow-x-auto">
         <table className="w-full min-w-[1280px] table-fixed border-collapse">
@@ -135,7 +145,6 @@ export function ProjectTableGroup({
     <div className="space-y-10 sm:space-y-14">
       {projectCategories.map((category) => {
         const items = groupedProjects[category] ?? [];
-        const label = categoryLabels[category];
 
         return (
           <div
@@ -151,13 +160,7 @@ export function ProjectTableGroup({
               />
             ) : (
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-card">
-                <div className="border-b border-white/10 px-6 py-4">
-                  <span
-                    className={`inline-block rounded-lg px-4 py-2 text-sm font-extrabold tracking-wide sm:text-base ${label.badge}`}
-                  >
-                    {label.ko} {label.en}
-                  </span>
-                </div>
+                <CategoryBar category={category} />
                 <p className="px-6 py-8 text-sm text-gray-400">
                   등록된 프로젝트가 없습니다.
                 </p>

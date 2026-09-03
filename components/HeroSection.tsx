@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HeroBackgroundSlides } from "@/components/HeroBackgroundSlides";
 import { heroSlides, HERO_SLIDE_INTERVAL_MS } from "@/data/heroSlides";
@@ -17,34 +16,15 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="page-hero">
       <HeroBackgroundSlides slides={heroSlides} activeIndex={activeIndex} />
 
-      <div className="section-container relative z-10 flex w-full flex-col justify-center py-28 sm:py-32 lg:py-36">
-        <div className="mx-auto w-full max-w-4xl text-center lg:mx-0 lg:text-left">
-          <p className="page-subtitle [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]">
-            About Us
-          </p>
-
-          <h1 className="page-title mt-5 [text-shadow:0_2px_20px_rgba(0,0,0,0.7)]">
+      <div className="page-hero-inner">
+        <div className="page-hero-copy">
+          <h1 className="page-title whitespace-nowrap text-[clamp(1.25rem,4.6vw,3.75rem)] [text-shadow:0_2px_20px_rgba(0,0,0,0.7)]">
             플랜트 엔지니어링의{" "}
             <span className="text-brand-blue">미래</span>를 설계합니다
           </h1>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
-            <Link
-              href="/projects"
-              className="rounded-full bg-brand-blue px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-blue-dark"
-            >
-              사업분야 보기
-            </Link>
-            <Link
-              href="/contact"
-              className="brand-font rounded-full border border-white/30 px-8 py-3.5 text-sm text-white transition-colors hover:border-white hover:bg-white/5"
-            >
-              Contact Us
-            </Link>
-          </div>
         </div>
       </div>
 

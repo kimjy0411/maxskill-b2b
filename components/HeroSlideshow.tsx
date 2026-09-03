@@ -17,7 +17,7 @@ interface HeroSlideshowProps {
 export default function HeroSlideshow({
   slides = heroSlides,
   children,
-  minHeight = "min-h-screen",
+  minHeight = "h-[calc(100svh-6.75rem)] min-h-[22rem]",
 }: HeroSlideshowProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -30,14 +30,14 @@ export default function HeroSlideshow({
   }, [slides.length]);
 
   return (
-    <section
-      className={`page-hero relative flex items-center overflow-hidden ${minHeight}`}
-    >
+    <section className={`page-hero ${minHeight}`}>
       <HeroBackgroundSlides slides={slides} activeIndex={activeIndex} />
 
-      <div className="relative z-10">{children}</div>
+      <div className="page-hero-inner">
+        <div className="page-hero-copy">{children}</div>
+      </div>
 
-      <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-8">
+      <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-10">
         {slides.map((slide, index) => (
           <button
             key={slide.category}

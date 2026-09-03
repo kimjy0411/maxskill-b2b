@@ -11,7 +11,7 @@ export const companyInfo = {
   ceoName: "김석기",
   ceoTitle: "CEO",
   description:
-    "화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업으로 Piping Design, Stress Analysis, 3D CAD, 설계 IT 분야의 축적된 기술력을 바탕으로 최고의 솔루션을 제공합니다.",
+    "화공, 발전, LNG 분야 플랜트 엔지니어링 전문기업. Piping Design, Stress Analysis, 3D CAD, 설계 IT.",
   scaleYear: "2025",
   revenue: "32억원",
   headcount: "48명",

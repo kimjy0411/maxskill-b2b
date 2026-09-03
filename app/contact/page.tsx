@@ -1,3 +1,4 @@
+import PageHero from "@/components/PageHero";
 import { companyInfo } from "@/data/company";
 
 const mapQuery = "서울특별시 성동구 성수이로 66 서울숲드림타워";
@@ -7,19 +8,7 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 export default function ContactPage() {
   return (
     <main>
-      <section className="page-hero">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-brand-blue/10 blur-3xl" />
-
-        <div className="section-container relative py-20 sm:py-28 lg:py-36">
-          <p className="page-subtitle">Contact Us</p>
-          <h1 className="page-title mt-5 max-w-3xl">
-            <span className="text-brand-blue">문의</span>하기
-          </h1>
-          <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-gray-400 sm:text-lg">
-            프로젝트 문의, 협력 제안 등 무엇이든 편하게 연락해 주세요.
-          </p>
-        </div>
-      </section>
+      <PageHero subtitle="Contact Us" title="문의하기" />
 
       <section className="section-container py-20 sm:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">

@@ -37,9 +37,11 @@ function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) {
           key={project.id}
           className="rounded-2xl border border-white/15 bg-black/50 p-6 backdrop-blur-sm"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-blue">
-            {project.year}
-          </p>
+          {project.year > 0 && (
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-blue">
+              {project.year}
+            </p>
+          )}
           <h3 className="mt-3 text-lg font-bold leading-snug text-white">
             {project.displayName}
           </h3>

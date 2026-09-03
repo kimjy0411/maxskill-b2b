@@ -559,6 +559,32 @@ export const projects: Project[] = [
     service: "D,M",
     tool: "PDS",
   },
+
+  // ── 산업설비 ──
+  {
+    id: 55,
+    name: "현대제철 (HPLS)",
+    client: "현대제철",
+    category: "산업설비",
+    year: 0,
+    location: "Korea",
+  },
+  {
+    id: 56,
+    name: "삼성전자 P5 ph-1 2공구(삼성물산)",
+    client: "삼성물산",
+    category: "산업설비",
+    year: 0,
+    location: "Korea",
+  },
+  {
+    id: 57,
+    name: "DYPNF 구형흑연 기본설계",
+    client: "DYPNF",
+    category: "산업설비",
+    year: 0,
+    location: "Korea",
+  },
 ];
 
 export function computeProjectStats(projectList: Project[]) {

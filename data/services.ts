@@ -37,15 +37,14 @@ export const services: Service[] = [
   {
     id: "piping",
     title: "Piping Design",
-    summary:
-      "Planning · Basic Design · Detail Design — 배관 설계 전 공정 One-Stop 수행",
+    summary: "Planning · Basic Design · Detail Design",
     intro: [
-      "Planning 단계에서는 WBS·마일스톤 기반 일정 수립과 Mechanical, Instrument, Electrical, Civil 등 유관 공종 간 인터페이스를 조율합니다. Basic Design에서는 Plot Plan을 통해 배관 라우팅·설비 배치·공간 활용을 최적화하고, Detail Design에서는 3D Plan/ISO, Stress ISO, Support Detail, Information 도면까지 실무에 바로 적용 가능한 산출물을 제공합니다.",
-      "국내외 대형 EPC 프로젝트에서 축적된 설계 경험을 바탕으로, 설계 변경·현장 대응·재작업을 최소화하는 실용적인 배관 설계 솔루션을 제공합니다.",
+      "Planning 단계에서는 WBS·마일스톤 기반 일정 수립과 Mechanical, Instrument, Electrical, Civil 등 유관 공종 간 인터페이스를 조율합니다. Basic Design에서는 Plot Plan을 통해 배관 라우팅·설비 배치를 작성하고, Detail Design에서는 3D Plan/ISO, Stress ISO, Support Detail, Information 도면을 제공합니다.",
+      "국내외 대형 EPC 프로젝트의 배관 설계를 수행합니다.",
     ],
     highlights: [
-      "Planning → Basic Design → Detail Design 단계별 체계적 수행",
-      "3D Plan / ISO / Stress ISO / Support Detail 도면 일괄 제공",
+      "Planning → Basic Design → Detail Design 단계별 수행",
+      "3D Plan / ISO / Stress ISO / Support Detail 도면 제공",
       "화공·발전·LNG 분야 대형 프로젝트 다수 수행",
       "다공종 Coordination 및 설계 변경 대응",
     ],
@@ -75,7 +74,7 @@ export const services: Service[] = [
           {
             name: "Plot Plan",
             description:
-              "Equipment, Structure, Pipe Rack, Utility, Roadway 등을 반영한 설비 배치도, Pipe Routing, Valve Access, Maintenance Space 및 향후 확장성을 고려한 최적 배치안을 제시합니다.",
+              "Equipment, Structure, Pipe Rack, Utility, Roadway 등을 반영한 설비 배치도, Pipe Routing, Valve Access, Maintenance Space를 반영한 배치안을 작성합니다.",
           },
         ],
       },
@@ -116,7 +115,7 @@ export const services: Service[] = [
     summary:
       "Thermal Analysis · Special Support · Trouble Shooting — 배관 응력 해석 전문",
     intro: [
-      "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대해서도 신속한 해석·대안 제시가 가능합니다. Piping Design과 유기적으로 연계되어 Stress ISO 도면까지 일관된 품질로 제공합니다.",
+      "설계 단계에서 Operating·Transient·Occasional Load Case를 검토하고, 현장에서 발생하는 Support 이슈·진동·Leak 등 긴급 문제에 대한 해석·대응안을 작성합니다. Piping Design과 연계하여 Stress ISO 도면을 작성합니다.",
       "국내외 화공·발전·LNG 프로젝트에서 High Temperature·High Pressure 배관, Critical Line에 대한 해석 경험을 보유하고 있으며, Owner·EPC·Contractor 요구 Specification에 맞춘 해석 보고서를 작성합니다.",
     ],
     highlights: [
@@ -168,7 +167,7 @@ export const services: Service[] = [
       {
         title: "Trouble Shooting",
         description:
-          "시공·운전 중 발생하는 배관 관련 이슈에 대한 신속한 원인 분석 및 해결책을 제시합니다.",
+          "시공·운전 중 발생하는 배관 관련 이슈에 대한 원인 분석과 대응안을 작성합니다.",
         items: [
           {
             name: "Trouble Shooting",
@@ -260,7 +259,7 @@ export const services: Service[] = [
           {
             name: "Navisworks 검증",
             description:
-              "Hard, Soft, Clearance Check 등 간섭 검토 및 Report 작성 및 Design Tracking. Model Review로 Design과 Model의 정확성, 품질을 검토합니다.",
+              "Hard, Soft, Clearance Check 등 간섭 검토 및 Report 작성. Design Tracking, Model Review로 Design과 Model의 정확성 및 품질을 검토합니다.",
           },
         ],
       },
@@ -271,7 +270,7 @@ export const services: Service[] = [
   {
     id: "programming",
     title: "설계 IT",
-    summary: "Admin · Programming",
+    summary: "Admin · Program",
     intro: [],
     highlights: [],
     sectionsLayout: "split",
@@ -344,7 +343,7 @@ export const services: Service[] = [
           {
             name: "3D Total Application",
             description:
-              "3D 작업의 통일성과 정확성을 높이고 작업시간을 단축하여, 전체적인 Project 품질 향상을 목적으로 개발된 E3D 연동 통합 Add-in 프로그램입니다.",
+              "3D 작업의 통일성과 정확성을 높이고 작업시간을 단축하여, 전체적인 Project 품질 향상을 목적으로 개발된 3D 통합 Add-in 프로그램입니다.",
           },
           {
             name: "P&ID",
@@ -355,7 +354,7 @@ export const services: Service[] = [
       },
     ],
     image: serviceBanner("programming.jpg"),
-    imageAlt: "설계 IT — Programming",
+    imageAlt: "설계 IT — Program",
   },
 ];
 
